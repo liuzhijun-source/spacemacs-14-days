@@ -62,4 +62,8 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
 
 ![image-20210920104836241](images/image-20210920104836241.png)
 
-此时再启动 Emacs 就会从清华源开始下载包，速度应该会快很多，然后耐心等待它下载完就可以了。
+此时再启动 Emacs 就会从清华源开始下载包，速度应该会快很多，然后耐心等待它下载完就可以了。全部下载完之后，重启一下 Emacs，就可以看到 Spacemacs 的 Logo 了。
+
+---
+
+下一节 [Day02 - Spacemacs 的配置](../Day02/Spacemacs的配置.md)
