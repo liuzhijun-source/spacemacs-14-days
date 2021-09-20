@@ -4,8 +4,9 @@
 
 ---
 
-<center><img src="images/title2.png"></center>
-<center>Emacs 是一种生活方式。</center>
+<div align=center><img src="images/title2.png"></div>
+
+<div align=center>Emacs 是一种生活方式。</div>
 
 ---
 
