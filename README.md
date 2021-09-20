@@ -8,13 +8,16 @@
 
 ---
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2d7ca95ff7aad0f8584f0ef3e87f0c504514f731
 **介绍**
 
 这是一个 Spacemacs 入门教程，旨在让你在尽量在两个星期内熟悉 Spaecmacs，学会使用 Spacemacs 的各种操作，并在最后配置出一个符合自己使用习惯的 Spacemacs。
 
-## [Day01 - Spacemacs 的安装](Day01/Spacemacs 的安装.md)
+## [Day01 - Spacemacs 的安装](Day01/Spacemacs的安装.md)
 
 - Spacemacs 在 Windows 下的安装
 - Spacemacs 在 Linux 和 macOS 下的安装
