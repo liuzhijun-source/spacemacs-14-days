@@ -6,7 +6,7 @@
 
 在上一节安装 Spacemacs 时，Spacemacs 让我们选择自己的编辑模式（Vim和Emacs），安装完 Spacemacs 后如果我们对当前的编辑模式不满意，可以在`.spacemacs`文件中进行更改。
 
-打开 .spacemacs 文件，按`C-s`，搜索`editing-style`，可以找的编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，可以根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。o
+打开 .spacemacs 文件，按`C-s`，搜索`editing-style`，可以找的编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，可以根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。
 
 ## 显示行号
 
@@ -24,13 +24,12 @@
 
 另外，大多是等宽字体并不包含中文字体，因此 Emacs 中的中文大多会以宋体来显示，可以用下面的方法单独设置中文字体。
 
-> 在 .spacemacs 中搜索`user-config`定位到用户配置，然后添加下面的代码：
+> 在 .spacemacs 中搜索`user-config`定位到用户配置，然后添加下面的代码： 
 > ```lisp
 > (set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "Your Font" :size 18 :weight 'normal))
 > ```
-
 > 请将`Your Font`修改为你自己的中文字体，其中`:size`可以更改字体的大小
-> 代码出处o：[Emacs China](https://emacs-china.org/t/emacs/15676)有作修改
+> 代码出处：[Emacs China](https://emacs-china.org/t/emacs/15676) 有作修改
 
 ## 更改主题
 
