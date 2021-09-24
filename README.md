@@ -13,19 +13,25 @@
 这是一个 Spacemacs 入门教程，旨在让你在尽量在两个星期内熟悉 Spaecmacs，学会使用 Spacemacs 的各种操作，并在最后配置出一个符合自己使用习惯的 Spacemacs。
 另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极之处，我会及时进行修改。
 
-## Day01 - [Spacemacs 的安装](Day01/Spacemacs的安装.md)
+## Day01 - [Spacemacs 的安装](Week01/Day01/Spacemacs的安装.md)
 
 - Spacemacs 在 Windows 下的安装
 - Spacemacs 在 Linux 和 macOS 下的安装
 - 镜像源的更换
 
-## Day02 - [Spacemacs 的配置](Day02/Spacemacs的配置.md)
+## Day02 - [Spacemacs 的配置](Week01/Day02/Spacemacs的配置.md)
 
 - 设置适合自己的编辑模式
 - 显示行号
 - 设置字体和字体大小
 - 更改主题
 - 用户配置
+
+## Day03 - [Spacemacs 中的 layer](Week01/Day03/Spacemacs中的layer.md)
+
+- layer 是什么？
+- 添加一些常用的 layer
+- 一些 layer 的配置
 
 ## Q&A
 
