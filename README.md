@@ -27,13 +27,13 @@
 - 更改主题
 - 用户配置
 
-## Day03 - [Spacemacs 中的 layer（上）](Week01/Day03/Spacemacs中的layer（上）.md)
+## Day03 - [Spacemacs 中的 layer（上）](Week01/Day03/Spacemacs中的layer(上).md)
 
 - layer 是什么？
 - 添加一些常用的 layer
 - 一些 layer 的配置
 
-## Day04 - [Spacemacs 中的 layer(下)](Week01/Day04/Spacemacs中的layer（下）.md)
+## Day04 - [Spacemacs 中的 layer（下）](Week01/Day04/Spacemacs中的layer(下).md)
 
 - treemacs
 - lsp
