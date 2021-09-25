@@ -19,7 +19,7 @@
 - Spacemacs 在 Linux 和 macOS 下的安装
 - 镜像源的更换
 
-## Day02 - [Spacemacs 的配置](Week01/Day02/Spacemacs的配置.md)
+## Day02 - [Spacemacs 的基本配置](Week01/Day02/Spacemacs的基本配置.md)
 
 - 设置适合自己的编辑模式
 - 显示行号
@@ -27,11 +27,17 @@
 - 更改主题
 - 用户配置
 
-## Day03 - [Spacemacs 中的 layer](Week01/Day03/Spacemacs中的layer.md)
+## Day03 - [Spacemacs 中的 layer（上）](Week01/Day03/Spacemacs中的layer（上）.md)
 
 - layer 是什么？
 - 添加一些常用的 layer
 - 一些 layer 的配置
+
+## Day04 - [Spacemacs 中的 layer(下)](Week01/Day04/Spacemacs中的layer（下）.md)
+
+- treemacs
+- lsp
+- syntax-checking
 
 ## Q&A
 
