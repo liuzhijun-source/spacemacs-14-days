@@ -8,22 +8,28 @@
    .spacemacs 中，内容一般被分为五大部分，每个部分都封装在一个函数中：
 
    * dotspacemacs/layers
+   
      在这里可以声明一些 layer，以及删除、增添一些包，在这里还可以调整 Spacemacs 加载时的一些行为，和配置一些 layer。
 
    * dotspacemacs/init
+   
      Spacemacs 绝大部分的配置都位于此，你可以在此修改配置中可选的选项，但绝对不能将自己的
      用户配置代码添加在这里
 
    * dotspacemacs/user-env
+   
      主要用来设置环境变量
 
    * dotspacemacs/user-init
+   
      一般在这里设置你需要使用的 elpa 源
 
    * dotspacemacs/user-config
+   
      在这里可以添加你的用户配置代码，你自己的定义的大部分配置一般都在这里完成
 
    * dotspacemacs/emacs-custom-settings
+   
      Emacs 自己生成的配置，同样不建议自己去修改
 
 ** 开始配置
@@ -33,10 +39,12 @@
     该部分主要是关于 Spacemacs 中 layer 的声明和配置，和 Spacemacs 安装软件包的行为的配置
 
     * dotspacemacs-distribution
+    
      可选的只有 spacemacs-base 和 spacemacs，spacemacs-base 可以理解为是一个精简版
      的 Spacemacs，默认为 ~spacemacs~ ，即一个完整的 Spacemacs
 
    * dotspacemacs-enable-lazy-installation
+   
      #+BEGIN_QUOTE
      惰性安装：
 
@@ -49,14 +57,17 @@
      只会安装你没有使用的 layer，nil 将禁用惰性安装这一功能，默认为 unused。
 
    * dotspacemacs-ask-for-lazy-installation
+   
      对应于上面的选项，在安装相应的 layer 前会询问你是否需要安装，可选的值有 t 和 nil，默认为 t
 
    * dotspacemacs-configuration-layer-path
+   
      如果你配置了自己的 layer，但是却把它放在了 .emacs.d 以外的文件夹中，为了让 spacemacs
      可以找到这个 layer，就需要配置这个选项。Spacemacs 将会额外从这个目录中寻找 layer。
      值为一个目录的路径，结尾要带上“/”
 
    * dotspacemacs-configuration-layers
+   
      声明 layer 的地方，在此声明过的 layer 将会在下次启动 emacs 时自动安装，也可以进行
      一些 layer 的配置，如：
 
@@ -82,16 +93,20 @@
      #+END_SRC
 
    * dotspacemacs-additional-packages
+   
      添加单独的包的地方，将包名填入括号中后，下次启动 spacemacs 时就会自动开始安装，也可以在此
      进行一些简单的包配置。 *不再此选项中出现的包将会在下次启动 Spacemacs 被删除，因此不建议使用 package-install 安装包*
 
    * dotspacemacs-frozen-packages
+   
      将包名添加到这个选项中后，该包将会禁止更新
 
    * dotspacemacs-excluded-packages
+   
      主要用于移除一些 layer 中你不想要的包，填写在这里这里的包将会被移除
 
    * dotspacemacs-install-packages
+   
      定义了 Spacemacs 安装包的一般行为，可选的值有 used-only、used-but-keep-unused 和 all，
 
      #+BEGIN_QUOTE
