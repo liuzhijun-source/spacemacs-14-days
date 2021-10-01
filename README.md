@@ -39,6 +39,13 @@
 - lsp
 - syntax-checking
 
+## Day05 - [Spacemacs 的进阶配置](Week01/Day05/Spacemacs的进阶配置.org)
+
+- .spacemacs 基本介绍
+- 开始配置
+  - dotspacemacs/layers
+  - dotspacemacs/init
+
 ## Q&A
 
 **Q: 为什么要出这个教程？**

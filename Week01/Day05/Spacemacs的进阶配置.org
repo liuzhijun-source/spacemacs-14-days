@@ -26,7 +26,7 @@
    * dotspacemacs/emacs-custom-settings
      Emacs 自己生成的配置，同样不建议自己去修改
 
-** 正文开始
+** 开始配置
    接下来开始讲解，可配置的选项按出现的位置进行排序（从上到下）。
 
 *** dotspacemacs/layers
