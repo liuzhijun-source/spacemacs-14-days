@@ -140,6 +140,111 @@ used-only 会安装你*使用的包*，而删除那些*你没有使用的包*，
 
 设置 Spacemacs 启动时显示的 Logo，可选的值有 official、random、nil 和你自己图像的路径，这个路径必须是一个字符串。默认为 offical，如果是 nil，则不显示 Logo
 
-- `dotspacemacs-start-lists`
+- `dotspacemacs-statup-lists`
 
 设置 Spacemacs 启动时显示的列表，值有 recents、recent-by-project、bookmarks、projects、agenda、todos，可以显示最近打开的文件、项目、书签和 todo 等，接受一个列表，项后面的数字是该项目显示的长度，修改为 nil 可以不显示
+
+- `dotspacemacs-startup-buffer-responsive`
+
+可选的值有 t 和 nil, 如果是 t 的话, 那么你就可以调整 buffer 的大小, 默认为 t
+
+- `dotspacemacs-show-start-list-numbers`
+
+在开始界面的列表的项前面显示数字（如果你开启了显示列表的话）, 这样的话, 直接按数字就可以打开对应的文件、项目等, 可选的值有 t 和 nil, 默认为 t
+
+- `dotspacemacs-startup-buffer-nulti-digit-delay`
+
+按下数字键后的最小延迟时间（即等待时间）, 单位为秒, 默认为 0.4
+
+- `dotspacemacs-new-empty-buffer-major-mode`
+
+打开一个新的缓冲区后默认的模式, 可选的值有 text-mode 和 nil, 如果设置成 nil, 则使用基本模式, 默认为 text-mode
+
+- `dotspacemacs-scratch-mode`
+
+用来设置 scratch 这个 buffer 默认的模式, 可选的值有 text-mode 和 nil, 默认为 text-mode
+
+- `dotspacemacs-scratch-buffer-persistent`
+
+可选的值有 t 和 nil, 如果是 t, 你在 scratch 缓冲区写下的所有内容都会被自动保存, 默认为 nil
+
+- `dotspacemacs-scratch-buffer-unkillable`
+
+可选的值有 t 和 nil, 如果是 t, `kill-buffer`不会 kill 掉 scratch 缓冲区, 而是 bury（机翻是埋葬？我不好怎么翻译） 它, 默认为 nil
+
+- `dotspacemacs-initial-scratch-message`
+
+用来自定义 scratch 缓冲区上显示的内容, 可选的值有 nil 和一个字符串, 就比如: "Welcome to Spacemacs!"
+
+默认为 nil
+
+- `dotspacemacs-themes`
+
+用来设置 Spacemacs 的主题, Spacemacs 默认使用该列表中的第一个主题, 可以按`SPC T n`来切换这个列表中的主题
+
+> 如果使用的是 Emacs 的编辑模式, SPC(leader 键)应该是`M-m`！
+
+- `dotspacemacs-mode-line-theme`
+
+用来设置 Spacemacs 中 mode-line 的主题, 就是 Spacemacs 下面的那根长条, 可选的主题有
+
+1. spacemacs
+2. all-the-icons
+3. custom
+4. doom
+5. vanilla
+
+custom 是用来自定义的主题, vanilla 是原生 Emacs 默认的主题, 显示效果如下
+> 显示效果会受主题和字体的影响！！！
+
+spacemacs:
+![spacemacs的演示图片](images/spacemacs.png)
+
+all-the-icons:
+![all-the-icons的演示图片](images/all-the-icons.png)
+
+doom:
+![doom的演示图片](images/doom.png)
+
+vanilla:
+![vanilla的演示图片](images/vanilla.png)
+
+关于 custom 主题的自定义和 mode-line 的一些值的配置, 这里就不过多赘述了, 想要了解的话,可以参见[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#mode-line)
+
+- `dosspacemacs-colorize-cursor-according-to-state`
+
+可选的值有 t 和 nil, 如果是 t 的话, 光标的颜色会和 Spacemacs 中的状态的颜色一致, Spacemacs 中常用的状态一般有
+
+- Emacs 蓝色
+- Vim 正常模式 橙色
+- Vim 插入模式 绿色
+
+默认值为 t
+
+- `dotspacemacs-default-font`
+
+用来设置 Spacemacs 的字体, `:size`可以用来调整字体的大小, 如果值是一位小数的话, 则根据字号来调整字体的大小, 如果是整数的话, 则根据像素多少来调整字体的大小, 默认为 10.0, 如果你想用整数的话, 一般 14 是标准的大小, 依据你使用的字体而定。
+
+`:weight`用来调整字体的字重, `:width`用来调整字体的宽度, `:weight`用来调整字体的高度
+
+- `dotspacemacs-leader-key`
+
+用来设置 leader 键, 一般用于 Vim 和 Hybrid 编辑模式, leader 键主要用来自定义自己的快捷键。默认为 "SPC"
+
+- `dotspacemacs-emacs-command-key`
+
+用于在 Vim 和 Hybrid 编辑模式中, 按下 leader 键后, 用来代替 Emacs 中`M-x`的键, 默认为"SPC"
+
+- `dotspacemacs-ex-command-key`
+
+用来设置 Vim 编辑模式下 Ex 命令使用的键, 默认为 ":"
+
+- `dospacemacs-emacs-leader-key`
+
+用来设置 Emacs 的编辑模式和 Vim 的插入模式下的 leader 键, 默认为 "M-m"
+
+- `dosspacemacs-major-mode-leader-key`
+
+用来设置一个快捷键, 相当于按下`<leader 键> m`, 如`M-m m`, 可以用来方便一些操作, 默认为 ","
+
+- `dotspacemacs-`
