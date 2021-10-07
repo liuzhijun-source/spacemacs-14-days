@@ -8,17 +8,15 @@
 
 ---
 
-## 介绍
-
 这是一个 Spacemacs 入门教程，旨在让你在尽量在两个星期内熟悉 Spaecmacs，学会使用 Spacemacs 的各种操作，并在最后配置出一个符合自己使用习惯的 Spacemacs。
+
 另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极指出，我会及时进行修改。
 
-> 如果访问不了 GitHub，可以访问 Gitee 的镜像: https://gitee.com/liuzhijun-source/spacemacs-14-days/
+> 如果访问不了 GitHub，可以访问 Gitee 的镜像: <https://gitee.com/liuzhijun-source/spacemacs-14-days/>
 
-## Day01 - Spacemacs 的安装
+## **Day01 - Spacemacs 的安装**
 
 > 在开始之前，确保你的电脑上已经安装了 Emacs，如果是 Windows 系统的话，确保你已经添加了 HOME 环境变量
->
 > 如果不知道 Windows 系统怎么添加 HOME 环境变量，可以[点击这里](添加HOME环境变量.md)
 
 ### Windows 安装 Spacemacs
@@ -83,7 +81,7 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
 
 ---
 
-## Day02 - Spacemacs 的基本配置
+## **Day02 - Spacemacs 的基本配置**
 
 > 在阅读本节前，确保你已经正确安装好了 Spacemacs，且启动之后没有任何报错。
 
@@ -143,7 +141,7 @@ before packages are loaded."
 
 ---
 
-## Day03 - Spacemacs 中的 layer（上）
+## **Day03 - Spacemacs 中的 layer（上）**
 
 本文将用一种通俗的方式讲解 layer 是什么，并将会添加一些常用的 layer 和其配置。
 
@@ -245,15 +243,15 @@ layer 也是如此，它极大的简化了 Emacs 用户安装和使用配置包�
 
 ---
 
-## Day04 - Spacemacs 中的 layer（下）
+## **Day04 - Spacemacs 中的 layer（下）**
 
 本节将介绍一些使用頻率较高的 layer 的配置
 
 > 本版块将会长期更新
 
-### treemacs
+### Treemacs
 
-#### 基本操作
+#### - 基本操作
 
 > 以下操作请在 treemacs 缓冲区内完成，可以按`SPC 0`来切换到 treemac 缓冲区
 
@@ -285,7 +283,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
 
 或者，你可以使用`M-x treemacs-root-up`和`M-x treemacs-root-down`来移动目录
 
-#### 自动刷新
+#### - 自动刷新
 
 在你删除或者新建一些文件之后，treemacs 不会立即刷新当前的目录试图，你需要手动刷新。如果希望自动
 刷新的话，请更改 dotspacemacs-configuration-layers 中的 treemacs
@@ -294,7 +292,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
 (treemacs :variables treemacs-use-filewatch-mode t)
 ```
 
-#### 主题
+#### - 主题
 
 你可以使用 all-the-icons 主题来显示 treemacs 上的图标，配置方式同上
 
@@ -309,14 +307,14 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
                      treemacs-use-all-the-icons-theme t)
 ```
 
-### lsp
+### LSP
 
-#### 安装语言服务器
+#### - 安装语言服务器
 
 在打开相应的程序文件后，你可以通过输入`M-x lsp`手动来安装对应的语言服务器，这种方法适用于无法自动
 安装语言服务器的情况
 
-#### header line 的显示和隐藏
+#### - header line 的显示和隐藏
 
 启用 lsp 并安装对应语言的支持之后，通常会在相关的代码文件上显示显示当前文件的路径和图标，如果你想要
 隐藏的话，可以在 user-config 中添加`lsp-headerline-breadcrumb-enable nil`，你也
@@ -347,7 +345,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
               ;; 显示项目名称和文件名称
 ```
 
-#### 代码错误统计
+#### - 代码错误统计
 
 默认情况下，lsp 会统计当前项目下所有的错误，如果要禁用，应该修改`lsp-modeline-code-actions-enable`
 
@@ -369,7 +367,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
                      lsp-modeline-code-actions-segments '(count icon))))
 ```
 
-### syntax-checking
+### Syntax Checking
 
 syntax-checking 使用 flycheck 作为语法检查工具，默认情况下，flycheck 会在一些具有检查意义的
 地方提供语法检查，如各种各样的源代码文件 javascrpt、java、c/c++ 等，如果你希望它在 lisp 等源代码
@@ -381,7 +379,7 @@ syntax-checking 使用 flycheck 作为语法检查工具，默认情况下，fly
 
 ---
 
-## Day05 - Spacemacs 的进阶配置
+## **Day05 - Spacemacs 的进阶配置**
 
 本节将会详细讲解 .spacemacs 文件中的大部分配置，读者可以根据自己的需要自行修改
 
@@ -415,7 +413,7 @@ Spacemacs 自己生成的配置，同样不建议自己去修改
 
 接下来开始讲解，可配置的选项按出现的位置进行排序（从上到下）
 
-#### dotspacemacs/layers
+#### - dotspacemacs/layers
 
 该部分主要是关于 Spacemacs 中 layer 的声明和配置，和 Spacemacs 安装软件包的行为的配置
 
@@ -486,7 +484,7 @@ dotspacemacs-configuration-layers
 
 used-only 会安装你*使用的包*，而删除那些*你没有使用的包*，used-but-keep-unused 会安装*你使用的包*，但不会删除*你没有使用的包*，all 会安装 Spacemacs 支持的**所有包**
 
-#### dotspacemacs/init
+#### - dotspacemacs/init
 
 这里包含了 Spacemacs 中绝大部分的可配置选项，你不应该把你自己的配置代码添加在这里，并且这个部分的内容会在 Spacemacs 启动的最开始生效。注：有部分不影响使用的配置没有讲到（其实是因为不知道）
 

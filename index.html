@@ -10,33 +10,31 @@
 </head>
 <body>
   <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: '',
-      repo: ''
-    }
-  </script>
   <!-- 搜索模块 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script>
-    window.$docsify = {
-      search: 'auto', // 默认值
+   window.$docsify = {
+       repo: 'https://github.com/liuzhijun-source/spacemacs-14-days',
+       themeColor: '#715AB1',
+       externalLinkTarget: '_blank',
+       notFoundPage: true,
 
-      search : [
-        '/',            // => /README.md
-        '/guide',       // => /guide.md
-        '/get-started', // => /get-started.md
-        '/zh-cn/',      // => /zh-cn/README.md
-      ],
+       search: 'auto', // 默认值
+       search : [
+           '/',            // => /README.md
+           '/guide',       // => /guide.md
+           '/get-started', // => /get-started.md
+           '/zh-cn/',      // => /zh-cn/README.md
+       ],
 
-      // 完整配置参数
-      search: {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: [], // or 'auto'
-        placeholder: '搜索🔍',
+       // 完整配置参数
+       search: {
+           maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+           paths: [], // or 'auto'
+           placeholder: '搜索🔍',
 
-        // 支持本地化
-        placeholder: {
+           // 支持本地化
+           placeholder: {
             '/zh-cn/': '搜索🔍',
             '/': '搜索🔍'
         },
@@ -75,5 +73,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <!-- 复制按钮 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-lisp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-bash.min.js"></script>
 </body>
 </html>
