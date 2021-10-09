@@ -13,7 +13,9 @@
 另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极指出，我会及时进行修改。
 
 > GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/>
+
 > Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/>
+
 > GitHub Page: <https://liuzhijun-source.github.io/spacemacs-14-days/>
 
 ## **Day01 - Spacemacs 的安装**
