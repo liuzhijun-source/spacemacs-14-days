@@ -741,7 +741,7 @@ vanilla:
 
 ### TO BE CONTINUED
 
-支持，Week01 的内容就告一段落了，Week01主要介绍 Spacemacs 配置方面的内容，Week02 将会着重讲解 Spacemacs 使用方面的内容。同时，Day01 ~ Day07 的内容也将会继续更新（毕竟Day06还没有讲完...），让我们期待着！
+至此，Week01 的内容就告一段落了，Week01主要介绍 Spacemacs 配置方面的内容，Week02 将会着重讲解 Spacemacs 使用方面的内容。同时，Day01 ~ Day07 的内容也将会继续更新（毕竟Day06还没有讲完...），让我们期待着！
 
 TO BE CONTINUED...
 
