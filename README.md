@@ -2,19 +2,21 @@
 
 [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://develop.spacemacs.org)
 
-<div align=center><img src="images/title2.png"></div>
+<center><img src="images/title2.png"></center>
 
-<div align=center>Emacs 是一种生活方式。</div>
+<center>Emacs 是一种生活方式。</center>
 
 ---
 
 这是一个 Spacemacs 入门教程，旨在让你在尽量在两个星期内熟悉 Spaecmacs，学会使用 Spacemacs 的各种操作，并在最后配置出一个符合自己使用习惯的 Spacemacs。
 
-另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极指出，我会及时进行修改。
+另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极指出，我会及时进行修改😉
 
-> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/><br/>
-> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/><br/>
-> GitHub Page: <https://liuzhijun-source.github.io/spacemacs-14-days/><br/>
+> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/>  
+> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/>  
+> GitHub Page: <https://liuzhijun-source.github.io/spacemacs-14-days/>
+
+**注: 本教程是 Spacemacs 教程而不是 Emacs 教程，建立在你已经学会使用 Emacs 的基础上！**
 
 ## **Day01 - Spacemacs 的安装**
 
@@ -276,7 +278,7 @@ layer 也是如此，它极大的简化了 Emacs 用户安装和使用配置包�
 treemacs 提供了一个简单而强大的文件导航目录，通常情况下，它会自动根据当前的文件来决定应该显示哪个
 目录，但大多数时候，treemacs 并不会这么做，因此你需要手动切换目录。
 
-| 按键 |    对应的操作    |
+| 按键 | 对应的操作       |
 | :--: | :--------------: |
 | M-H  | 导航到上一级目录 |
 | M-L  | 导航到下一级目录 |
@@ -381,7 +383,7 @@ syntax-checking 使用 flycheck 作为语法检查工具，默认情况下，fly
 
 ---
 
-## **Day05 - Spacemacs 的进阶配置**
+## **Day05 - Spacemacs 的进阶配置（上）**
 
 本节将会详细讲解 .spacemacs 文件中的大部分配置，读者可以根据自己的需要自行修改
 
@@ -556,6 +558,12 @@ used-only 会安装你*使用的包*，而删除那些*你没有使用的包*，
 
 可选的值有 t 和 nil，如果是 t，`kill-buffer`不会 kill 掉 scratch 缓冲区，而是 bury（机翻是埋葬？我不好怎么翻译） 它，默认为 nil
 
+因为要讲的东西实在太多，一部分内容迁移到了 Day06...
+
+---
+
+## **Day06 - Spacemacs 的进阶配置（下）**
+
 - `dotspacemacs-initial-scratch-message`
 
 用来自定义 scratch 缓冲区上显示的内容，可选的值有 nil 和一个字符串，就比如: "Welcome to Spacemacs!"
@@ -584,19 +592,19 @@ custom 是用来自定义的主题，vanilla 是原生 Emacs 默认的主题，�
 > 显示效果会受主题和字体的影响！！！
 
 spacemacs:
-![spacemacs的演示图片](images/Day05/spacemacs.png)
+![spacemacs的演示图片](images/Day06/spacemacs.png)
 
 all-the-icons:
-![all-the-icons的演示图片](images/Day05/all-the-icons.png)
+![all-the-icons的演示图片](images/Day06/all-the-icons.png)
 
 doom:
-![doom的演示图片](images/Day05/doom.png)
+![doom的演示图片](images/Day06/doom.png)
 
 vim:
-![vim的演示图片](images/Day05/vim.png)
+![vim的演示图片](images/Day06/vim.png)
 
 vanilla:
-![vanilla的演示图片](images/Day05/vanilla.png)
+![vanilla的演示图片](images/Day06/vanilla.png)
 
 关于 custom 主题的自定义和 mode-line 的一些值的配置，这里就不过多赘述了，想要了解的话,可以参见[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#mode-line)
 
@@ -655,11 +663,11 @@ vanilla:
   在 Spacemacs 的 mode-line 中显示当前布局的名称，默认值为 nil
 
 - `dotspacemacs-auto-resume-layouts`
-  
+
   可选的值有 t 和 nil，如果是 t 的话，下次启动 Spacemacs 时将会恢复你上次退出 Spacemacs 时的布局，即重新打开你上次打开的所有 buffer
 
 - `dotspacemacs-auto-generate-layout-names`
-  
+
   可选的值有 t 和 nil，如果是 t，在创建新的 buffer 会自动生成名称，只有开启“按序号跳转 buffer”，这项功能才会生效
 
   > 通常情况下，Spacemacs 的 mode-line 最左边会显示 buffer 的序号，可以通过按`M-m <序号>` 来进行跳转
@@ -678,7 +686,64 @@ vanilla:
 
 - `dotspacemacs-enable-paste-ransient-state`
 
+  TODO...
+
 ---
+
+## **Day07 - 善用 leader 键、一些建议的配置**
+
+### 用 leader 键定义自己的快捷键
+
+在 Spacemacs 中按下 leader 键后，等待一会应该会出现如下图的界面，其中包括`user bindings`，这是专门用来给用户定义快捷键的区域。如果你想要方便的执行一些函数，而这些函数又是 Spacemacs 本身不带有的或者不符合你口味的，你可以试试用这个来定义你自己的快捷键。
+
+![按下 leader 键后的画面](./images/Day07/2021-10-10_17-27.png)
+
+下面举两个例子
+
+#### 定义一个重启 Emacs 的快捷键
+
+在 .spacemacs 文件中修改一些配置后，通常需要重启 Spacemacs 才会生效，但按`C-x C-c`退出 Spacemacs 再打开实在麻烦。`restart-emacs`可以快速重启 Emacs，且 Spacemacs 中已经定义好了相关的快捷键`M-m q R`，但是可能不太好按。现在上文的`M-m o`可以派上用场了，Emacs 中一般可以用下面的方式来绑定一个命令到一个键
+
+```lisp
+(global-set-key (kbd "<key>") '<function>)
+```
+
+其中 <key> 是你要绑定的键，<function> 是你希望执行的命令（函数），我希望把`restart-emacs`绑定到`M-m o r`中去，那么我可以
+
+```lisp
+(global-set-key (kbd "M-m o r") 'restart-emacs)
+```
+
+然后就可以用`M-m o r`来重启 Spacemacs 了。同时，之前的快捷键也并没有失效
+
+
+
+#### 绑定一个键到 helm-swoop
+
+如果添加了 ivy 这个 layer，那么你现在随意在某个文件按下`C-s`就可以进行更好的全文搜索，helm 中的`helm-swoop`同样可以实现这个功能，你可以按`M-x helm-swoop`，但是更好的方法是将它绑定一个键。ivy 可以直接按`C-s`进行全文搜索是因为 layer 中已经添加了键绑定相关的配置，我们可以手动为`helm-swoop`绑定一个键，方法同上
+
+```lisp
+(global-set-key (kbd "C-s") 'helm-swoop)
+```
+
+然后就可以使用`C-s`调用`helm-swoop`进行全文搜索啦～～～
+
+事实上，leader 键的内容远远不止这些，这还只是冰山一角，我不可能讲得面面俱到，否则这个教程也没有存在的意义。更多的内容，还需要你自己去探索
+
+### 解决 ivy 按下 M-x 显示 ^
+
+如果你的 ivy 没有添加任何配置，按下`M-x`后应该会出现这个符号“^”（如下图），有了它，你就可以通过书写正则表达式来查找命令，如果你不需要的话，可以用下面的方法关掉
+
+![^](./images/Day07/2021-10-10_17-51.png)
+
+1. `M-x customize-variable`，然后输入`ivy-initial-inputs-alist`
+2. 找到`counsel-M-x`这一项，然后按左边的`DEL`删除即可
+
+### TO BE CONTINUED
+
+支持，Week01 的内容就告一段落了，Week01主要介绍 Spacemacs 配置方面的内容，Week02 将会着重讲解 Spacemacs 使用方面的内容。同时，Day01 ~ Day07 的内容也将会继续更新（毕竟Day06还没有讲完...），让我们期待着！
+
+TO BE CONTINUED...
 
 ## Q&A
 
