@@ -716,8 +716,6 @@ vanilla:
 
 然后就可以用`M-m o r`来重启 Spacemacs 了。同时，之前的快捷键也并没有失效
 
-
-
 #### 绑定一个键到 helm-swoop
 
 如果添加了 ivy 这个 layer，那么你现在随意在某个文件按下`C-s`就可以进行更好的全文搜索，helm 中的`helm-swoop`同样可以实现这个功能，你可以按`M-x helm-swoop`，但是更好的方法是将它绑定一个键。ivy 可以直接按`C-s`进行全文搜索是因为 layer 中已经添加了键绑定相关的配置，我们可以手动为`helm-swoop`绑定一个键，方法同上
@@ -726,7 +724,7 @@ vanilla:
 (global-set-key (kbd "C-s") 'helm-swoop)
 ```
 
-然后就可以使用`C-s`调用`helm-swoop`进行全文搜索啦～～～
+现在可以使用`C-s`调用`helm-swoop`进行全文搜索了
 
 事实上，leader 键的内容远远不止这些，这还只是冰山一角，我不可能讲得面面俱到，否则这个教程也没有存在的意义。更多的内容，还需要你自己去探索
 
@@ -739,11 +737,55 @@ vanilla:
 1. `M-x customize-variable`，然后输入`ivy-initial-inputs-alist`
 2. 找到`counsel-M-x`这一项，然后按左边的`DEL`删除即可
 
-### TO BE CONTINUED
+## **Day08 - Emacs Server**
 
-支持，Week01 的内容就告一段落了，Week01主要介绍 Spacemacs 配置方面的内容，Week02 将会着重讲解 Spacemacs 使用方面的内容。同时，Day01 ~ Day07 的内容也将会继续更新（毕竟Day06还没有讲完...），让我们期待着！
+### Emacs Server 是什么？
 
-TO BE CONTINUED...
+Emacs Server 可以在你的内存中建立一个类似于服务器的东西（把你的配置加载到内存中）[^1]，这样的你要是想使用 Emacs 就可以直接开启一个 Emacs 客户端来连接到这个服务器，而不需要打开 Emacs 后再加载一边配置，可以极大的提高 Emacs 的启动速度，通常情况下**一秒不到**便可启动！
+
+### 使用教程
+
+在终端中运行
+
+```shell
+emacs --daemon
+```
+
+接着便会开始加载配置，加载完成后，使用`emacsclient`命令可以直接连接到刚才加载的配置，但后面通常用带上文件名，如: `emacsclient test.sh`。使用`emacsclient -c`可以直接以图形化界面运行 Spacemacs。演示如下:
+
+![emacscient 演示](/home/dexloper/GitHub/liuzhijun-source/spacemacs-14-days/images/Day08/Peek 2021-10-23 14-29.gif)
+
+下面这条命令可以让系统在开机时自动建立起一个 Emacs Server[^2]，这样的话就不必每次都执行`emacs --daemon`这条命令，可以直接使用`emacsclient`
+
+```shell
+systemctl --user enable emacs 
+```
+
+你甚至可以直接将 emacsclient 设置为终端的默认编辑器
+
+```shell
+export EDITOR='emacsclient -c'
+```
+
+.spacemacs 文件中同样有相关的配置，如果你使用的系统无法使用上面的命令来自动启动 Emacs Server，可以在 .spacemacs 修改下面的配置，这会在 Spacemacs 启动时自动开启一个 Emacs Server[^3]
+
+```lisp
+(setq-default dotspacemacs-enable-server t)
+```
+
+如果想要关闭已经开启的服务器，可以从 emacsclient 启动 Spacemacs，然后执行`SPC q q`(`M-m q q`)来退出 Emacs 并关闭掉服务器
+
+### 目前已知的问题
+
+1. 正常情况下修改 .spacemacs 文件中的配置后，在 emacsclient 中并不会生效，而是要重新加载配置之后配置才会生效
+
+2. 一些关于字体的配置在 emacsclient 中无效，如单独设置中英文字体的配置
+
+3. Linux 下 emacsclient 无法使用 Fcitx 输入法，可以使用 pyim 解决
+
+[^1]:https://www.emacswiki.org/emacs/EmacsClient?interface=zh-cn
+[^2]:https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html
+[^3]:https://develop.spacemacs.org/doc/DOCUMENTATION.html
 
 ## Q&A
 
