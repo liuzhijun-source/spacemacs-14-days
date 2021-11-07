@@ -823,7 +823,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 
 效果如图：
 
-![company-box 效果图][./Day09/company-box.png]
+![company-box 效果图][./images/Day09/company-box.png]
 
 关于 Company-box 又有一大堆的说明，这里就不过多赘述了。另外，可以使用 <kbd>SPC m l</kbd> 来查看一个 layer 的帮助文档，关于 auto-completion 的其他技巧，大家可以自行探究
 
