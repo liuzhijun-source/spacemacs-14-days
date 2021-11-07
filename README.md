@@ -12,8 +12,8 @@
 
 另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极指出，我会及时进行修改😉
 
-> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/>
-> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/>
+> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/>  
+> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/>  
 > GitHub Page: <https://liuzhijun-source.github.io/spacemacs-14-days/>
 
 **注: 本教程是 Spacemacs 教程而不是 Emacs 教程，建立在你已经学会使用 Emacs 的基础上！**
@@ -823,7 +823,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 
 效果如图：
 
-![company-box 效果图][./images/Day09/company-box.png]
+![company-box 效果图][images/Day09/company-box.png]
 
 关于 Company-box 又有一大堆的说明，这里就不过多赘述了。另外，可以使用 <kbd>SPC m l</kbd> 来查看一个 layer 的帮助文档，关于 auto-completion 的其他技巧，大家可以自行探究
 
