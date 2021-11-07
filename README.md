@@ -791,21 +791,21 @@ export EDITOR='emacsclient -c'
 
 Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中公共的部分和移动到下一个补全项，使用回车键来选中当前的项，如果你更习惯使用 Tab 来直接补全的话（即按 Tab 和回车都是直接补全自动完成列表的第一个项），你可以使用下面的代码：
 
-```elisp
+```lisp
 (setq-default dotspacemacs-configuration-layers
     '((auto-completion :variables auto-completion-tab-key-behavior 'complete)))
 ```
 
 你还可以让完成列表根据用户的使用习惯来进行排序，不过可能降低其速度，但是实测影响并不是很大
 
-```elisp
+```lisp
 (setq-default dotspacemacs-configuration-layers
     '((auto-completion :variables auto-completion-enable-sort-by-usage t)))
 ```
 
 在写代码的时候没有帮助文档那个怎么行？可以使用 `auto-completion-enable-help-tooltip`
 
-```elisp
+```lisp
 (setq-default dotspacemacs-configuration-layers
     '((auto-completion :variables auto-completion-enable-help-tooltip t)))
     ;; 设置为 t 可以在选中一个完成项自动显示其文档，将其改为 `manual` 后
@@ -816,7 +816,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 
 使用 Company-box 可以让 Company 使用更加现代的外观，更好看的图标，和更好地文档显示支持
 
-```elisp
+```lisp
 (setq-default dotspacemacs-configuration-layers
     '((auto-completion :variables auto-completion-use-company-box t)))
 ```
@@ -853,7 +853,7 @@ Spacemacs 默认使用 flycheck 进行语法检查，以下为 flycheck 的跳�
 
 默认的跳转快捷键可能有点麻烦，你可以自己绑定相关的键，如：
 
-```elisp
+```lisp
 (global-set-key (kbd "M-n") 'flycheck-next-error)
 (global-set-key (kbd "M-p") 'flycheck-previous-error)
 ```
@@ -862,7 +862,7 @@ Spacemacs 默认使用 flycheck 进行语法检查，以下为 flycheck 的跳�
 
 Spacemacs 附带了 quickrun，可以直接编译运行代码，支持大部分的语言。直接使用 <kbd>M-x quickrun</kbd> 即可，或者 <kbd>M-m x x</kbd> 。使用 quickrun 运行的程序，会在10秒后自动关闭，可以通过设置`quickrun-timeout-seconds`来防止它关闭：
 
-```elisp
+```lisp
 (setq quickrun-timeout-seconds nil) ;; 将该变量设置为 nil
 ```
 
