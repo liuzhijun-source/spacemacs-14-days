@@ -12,8 +12,8 @@
 
 另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极指出，我会及时进行修改😉
 
-> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/>  
-> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/>  
+> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/>
+> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/>
 > GitHub Page: <https://liuzhijun-source.github.io/spacemacs-14-days/>
 
 **注: 本教程是 Spacemacs 教程而不是 Emacs 教程，建立在你已经学会使用 Emacs 的基础上！**
@@ -741,7 +741,7 @@ vanilla:
 
 ### Emacs Server 是什么？
 
-Emacs Server 可以在你的内存中建立一个类似于服务器的东西（把你的配置加载到内存中）[^1]，这样的你要是想使用 Emacs 就可以直接开启一个 Emacs 客户端来连接到这个服务器，而不需要打开 Emacs 后再加载一边配置，可以极大的提高 Emacs 的启动速度，通常情况下**一秒不到**便可启动！
+Emacs Server 可以在你的内存中建立一个类似于服务器的东西（把你的配置加载到内存中），这样的你要是想使用 Emacs 就可以直接开启一个 Emacs 客户端来连接到这个服务器，而不需要打开 Emacs 后再加载一边配置，可以极大的提高 Emacs 的启动速度，通常情况下**一秒不到**便可启动！
 
 ### 使用教程
 
@@ -755,10 +755,10 @@ emacs --daemon
 
 ![emacscient 演示](./images/Day08/demo.gif)
 
-下面这条命令可以让系统在开机时自动建立起一个 Emacs Server[^2]，这样的话就不必每次都执行`emacs --daemon`这条命令，可以直接使用`emacsclient`
+下面这条命令可以让系统在开机时自动建立起一个 Emacs Server，这样的话就不必每次都执行`emacs --daemon`这条命令，可以直接使用`emacsclient`
 
 ```shell
-systemctl --user enable emacs 
+systemctl --user enable emacs
 ```
 
 你甚至可以直接将 emacsclient 设置为终端的默认编辑器
@@ -767,7 +767,7 @@ systemctl --user enable emacs
 export EDITOR='emacsclient -c'
 ```
 
-.spacemacs 文件中同样有相关的配置，如果你使用的系统无法使用上面的命令来自动启动 Emacs Server，可以在 .spacemacs 修改下面的配置，这会在 Spacemacs 启动时自动开启一个 Emacs Server[^3]
+.spacemacs 文件中同样有相关的配置，如果你使用的系统无法使用上面的命令来自动启动 Emacs Server，可以在 .spacemacs 修改下面的配置，这会在 Spacemacs 启动时自动开启一个 Emacs Server
 
 ```lisp
 (setq-default dotspacemacs-enable-server t)
@@ -778,14 +778,95 @@ export EDITOR='emacsclient -c'
 ### 目前已知的问题
 
 1. 正常情况下修改 .spacemacs 文件中的配置后，在 emacsclient 中并不会生效，而是要重新加载配置之后配置才会生效
-
 2. 一些关于字体的配置在 emacsclient 中无效，如单独设置中英文字体的配置
+3. Linux 下 emacsclient 无法使用 Fcitx 输入法，可以使用 pyim 或者 emacs-rime 解决
 
-3. Linux 下 emacsclient 无法使用 Fcitx 输入法，可以使用 pyim 解决
+## **Day09 - 更好地编写代码**
 
-[^1]:https://www.emacswiki.org/emacs/EmacsClient?interface=zh-cn
-[^2]:https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html
-[^3]:https://develop.spacemacs.org/doc/DOCUMENTATION.html
+本节主要讲述 Spacemacs 中有关于代码编写等方面的使用技巧和操作优化
+
+### Company-mode 的操作优化
+
+> Spacemacs 的 auto-completion layer 默认使用 Company-mode 作为补全后端
+
+Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中公共的部分和移动到下一个补全项，使用回车键来选中当前的项，如果你更习惯使用 Tab 来直接补全的话（即按 Tab 和回车都是直接补全自动完成列表的第一个项），你可以使用下面的代码：
+
+```elisp
+(setq-default dotspacemacs-configuration-layers
+    '((auto-completion :variables auto-completion-tab-key-behavior 'complete)))
+```
+
+你还可以让完成列表根据用户的使用习惯来进行排序，不过可能降低其速度，但是实测影响并不是很大
+
+```elisp
+(setq-default dotspacemacs-configuration-layers
+    '((auto-completion :variables auto-completion-enable-sort-by-usage t)))
+```
+
+在写代码的时候没有帮助文档那个怎么行？可以使用 `auto-completion-enable-help-tooltip`
+
+```elisp
+(setq-default dotspacemacs-configuration-layers
+    '((auto-completion :variables auto-completion-enable-help-tooltip t)))
+    ;; 设置为 t 可以在选中一个完成项自动显示其文档，将其改为 `manual` 后
+    ;; 按 <kbd>C-s</kbd> 才会在旁边显示帮助文档
+```
+
+打开文档后，你可以使用 <kbd>C-M-v</kbd> 来向下翻看文档，<kbd>C-M-V</kbd> 则为向上
+
+使用 Company-box 可以让 Company 使用更加现代的外观，更好看的图标，和更好地文档显示支持
+
+```elisp
+(setq-default dotspacemacs-configuration-layers
+    '((auto-completion :variables auto-completion-use-company-box t)))
+```
+
+效果如图：
+
+![company-box 效果图][./Day09/company-box.png]
+
+关于 Company-box 又有一大堆的说明，这里就不过多赘述了。另外，可以使用 <kbd>SPC m l</kbd> 来查看一个 layer 的帮助文档，关于 auto-completion 的其他技巧，大家可以自行探究
+
+### 标签栏
+
+Emacs 的 buffer 切换不够直观、方便，可以使用 `tab-bar-mode` 解决，它会在 Emacs 顶部显示一个标签栏。Spacemacs 中默认已经安装了这个包
+
+可以采取命令或者使用鼠标的方式来完成标签栏的切换，Spacemacs 默认并没有绑定相关的快捷键，大家可以自行绑定
+
+- tab-bar-switch-to-tab 根据名字来切换标签
+- tab-bar-switch-to-recent-tab 切换到最近的标签
+- tab-bar-switch-to-next-tab 切换到下一个标签
+- tab-bar-close-tab 关闭标签
+- tab-bar-new-tab 新建标签
+
+### 错误跳转
+
+Emacs 有自己的错误跳转函数，兼容 flycheck、flymake
+
+- next-error <kbd>M-m c n</kbd> 跳转到下一个错误
+- previous-error <kbd>M-m c N</kbd> 跳转到上一个错误
+
+Spacemacs 默认使用 flycheck 进行语法检查，以下为 flycheck 的跳转函数
+
+- flycheck-next-error
+- flycheck-previous-error
+
+默认的跳转快捷键可能有点麻烦，你可以自己绑定相关的键，如：
+
+```elisp
+(global-set-key (kbd "M-n") 'flycheck-next-error)
+(global-set-key (kbd "M-p") 'flycheck-previous-error)
+```
+
+### 快速运行代码
+
+Spacemacs 附带了 quickrun，可以直接编译运行代码，支持大部分的语言。直接使用 <kbd>M-x quickrun</kbd> 即可，或者 <kbd>M-m x x</kbd> 。使用 quickrun 运行的程序，会在10秒后自动关闭，可以通过设置`quickrun-timeout-seconds`来防止它关闭：
+
+```elisp
+(setq quickrun-timeout-seconds nil) ;; 将该变量设置为 nil
+```
+
+程序运行完之后，还会留下一个 buffer 不会自动关闭，可以按 <kbd>C-g</kbd> 将其关闭。
 
 ## Q&A
 
