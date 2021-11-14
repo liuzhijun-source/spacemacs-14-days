@@ -45,8 +45,6 @@
 
   可以在 Spacemacs 的 [GitHub 仓库](https://github.com/syl20bnr/spacemacs#install-spacemacs-in-windows)下载 Spacemacs 的源码压缩包，如果速度太慢的话，可以在 Spacemacs 的[镜像源仓库](https://codechina.csdn.net/mirrors/syl20bnr/spacemacs)下载，下载完成后解压缩并将文件夹命名为`.emacs.d`，然后放置到主目录下即可。
 
-> 完成以上步骤后先不要急着启动 Emacs！！！
-
 ### Linux 和 macOS 安装 Spacemacs
 
 Linux 和 macOS 通常都默认安装了 git，打开终端，然后执行下面的命令来安装：
@@ -61,10 +59,6 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
 ```
 
-> 完成以上步骤后先不要急着启动 Emacs！！！
-
----
-
 安装完 Spacemacs 之后，下次启动 Emacs 就会自动从 Melpa 下载包了，但是 Melpa 的服务器在国外，因为包下载的速度会特别慢，要等很久，可以用更改镜像源的方法解决，我们这里使用清华的镜像源。
 
 启动 Emacs 时，它会问你想要使用那种编辑模式（Vim或Emacs），根据自己的喜好选择好之后回车即可，然后会询问你是想安装标准版的 Spacemacs 还是精简版的 Spacemacs  `minimal`，同样自己选择之后回车即可。此时应该会开始下载包了，并且会在主目录下生成一个`.spacemacs`文件。这时通过任务管理器或系统监视器关闭 Emacs，然后在`.spacemacs`中找到`dotspacemacs/user-init()`，然后在里面添加下面的代码：
@@ -74,7 +68,6 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
     '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
       ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
       ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
-
 ```
 
 添加完成后应该如下图所示：
@@ -93,17 +86,17 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
 
 在上一节安装 Spacemacs 时，Spacemacs 让我们选择自己的编辑模式（Vim和Emacs），安装完 Spacemacs 后如果我们对当前的编辑模式不满意，可以在`.spacemacs`文件中进行更改。
 
-打开 .spacemacs 文件，按`C-s`，搜索`editing-style`，可以找的编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，可以根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。
+打开 .spacemacs 文件，按 <kbd>C-s</kbd> ，搜索`editing-style`，可以找的编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，可以根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。
 
 ### 显示行号
 
-> 在 Spacemacs 的 Vim 编辑模式中，SPC 为空格键，而如果你是用的是 Emacs 编辑模式，SPC 则指代 `M-m`，为方便期间，下文的 SPC 和 M-m，统一用 SPC 表示
+> 在 Spacemacs 中，SPC（即空格键）是 Vim 编辑模式下默认的 leader 键，如果你使用 Emacs 编辑模式，默认的 leader 键是 <kbd>M-m</kbd> ，本教程统一使用 <kbd>SPC</kbd> 表示
 
-按`SPC f e d`可以快速打开 .spacemacs 文件，按`C-s`搜索`line-numbers`可以找到一个叫做`dotspacemacs-line-numbers`的选项，这个选项可以显示行号并设置行号的风格，可选的值有`visual`、`relative`还有`t`，visual 和 relative 都是显示相对行号，且两者并没有什么区别，t 则是显示普通的行号，可以根据自己的需要选择。
+按 <kbd>SPC f e d</kbd> 可以快速打开 .spacemacs 文件，按 <kbd>C-s</kbd> 搜索`line-numbers`可以找到一个叫做`dotspacemacs-line-numbers`的选项，这个选项可以显示行号并设置行号的风格，可选的值有`visual`、`relative`还有`t`，visual 和 relative 都是显示相对行号，且两者并没有什么区别，t 则是显示普通的行号，可以根据自己的需要选择。
 
 ### 设置字体和字体大小
 
-按`C-s`搜索`font`一般可以找到一个名为`dospacemacs-default-font`的选项，更改双引号中的内容可以修改字体，Spacemacs 默认的字体是 Source Code Pro，可以根据需要改成自己喜欢的字体。
+按 <kbd>C-s</kbd> 搜索`font`一般可以找到一个名为`dospacemacs-default-font`的选项，更改双引号中的内容可以修改字体，Spacemacs 默认的字体是 Source Code Pro，可以根据需要改成自己喜欢的字体。
 
 > Windows 系统默认并没有安装 Source Code Pro 字体，可以搜索进行安装，或者更改为自己喜欢的字体，Windows 一般使用 Consolas 字体。
 
@@ -257,9 +250,9 @@ layer 也是如此，它极大的简化了 Emacs 用户安装和使用配置包�
 
 #### - 基本操作
 
-> 以下操作请在 treemacs 缓冲区内完成，可以按`SPC 0`来切换到 treemac 缓冲区
+> 以下操作请在 treemacs 缓冲区内完成，可以按 <kbd>SPC 0</kbd> 来切换到 treemac 缓冲区
 
-在 treemacs 中可以使用`C-n`和`C-p`来上下移动选中文件，按回车键即可打开一个文件
+在 treemacs 中可以使用 <kbd>C-n</kbd> 和 <kbd>C-p</kbd> 来上下移动选中文件，按回车键即可打开一个文件
 
 | 按键 | 对应的操作              |
 | :--: | :---------------------: |
@@ -273,7 +266,7 @@ layer 也是如此，它极大的简化了 Emacs 用户安装和使用配置包�
 | th   | 隐藏或显示隐藏的文件    |
 | m    | 移动一个文件            |
 
-另外，`SPC f t`可以快速打开 treemacs
+另外， <kbd>SPC f t</kbd> 可以快速打开 treemacs
 
 treemacs 提供了一个简单而强大的文件导航目录，通常情况下，它会自动根据当前的文件来决定应该显示哪个
 目录，但大多数时候，treemacs 并不会这么做，因此你需要手动切换目录。
@@ -285,7 +278,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
 
 > 注意，H 和 L 是大写的，因此你还需要同时按下 Shift！
 
-或者，你可以使用`M-x treemacs-root-up`和`M-x treemacs-root-down`来移动目录
+或者，你可以使用 <kbd>M-x treemacs-root-up</kbd> 和 <kbd>M-x treemacs-root-down</kbd> 来移动目录
 
 #### - 自动刷新
 
@@ -315,7 +308,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
 
 #### - 安装语言服务器
 
-在打开相应的程序文件后，你可以通过输入`M-x lsp`手动来安装对应的语言服务器，这种方法适用于无法自动
+在打开相应的程序文件后，你可以通过输入 <kbd>M-x lsp</kbd> 手动来安装对应的语言服务器，这种方法适用于无法自动
 安装语言服务器的情况
 
 #### - header line 的显示和隐藏
@@ -589,7 +582,7 @@ used-only 会安装你*使用的包*，而删除那些*你没有使用的包*，
 
 custom 是用来自定义的主题，vanilla 是原生 Emacs 默认的主题，显示效果如下
 
-> 显示效果会受主题和字体的影响！！！
+> 显示效果会受主题和字体的影响
 
 spacemacs:
 ![spacemacs的演示图片](images/Day06/spacemacs.png)
@@ -630,7 +623,7 @@ vanilla:
 
 - `dotspacemacs-emacs-command-key`
 
-用于在 Vim 和 Hybrid 编辑模式中，按下 leader 键后，用来代替 Emacs 中`M-x`的键，默认为"SPC"
+用于在 Vim 和 Hybrid 编辑模式中，按下 leader 键后，用来代替 Emacs 中 <kbd>M-x</kbd>  的键，默认为"SPC"
 
 - `dotspacemacs-ex-command-key`
 
@@ -642,15 +635,15 @@ vanilla:
 
 - `dotspacemacs-major-mode-leader-key`
 
-用来设置一个快捷键，相当于按下`<leader 键> m`，如`M-m m`，可以用来方便一些操作，默认为 ","
+用来设置一个快捷键，相当于按下`<leader 键> m`，如 <kbd>SPC m</kbd> ，可以用来方便一些操作，默认为 ","
 
 - `dotspacemacs-major-mode-emacs-leader-key`
 
-使用 Vim 编辑模式或者 Hybrid 编辑模式后，在 Emacs 模式或者插入模式时下使用的 leader 键，这样的话使用 leader 键就不必再进入正常模式后再使用。如果是从终端使用 Spacemacs，默认是`C-M-m`，如果是以图形化界面启动，则默认是`M-RET`（RET 就是回车键），另外，`M-RET`在终端模式和图形化界面中都可以使用。
+使用 Vim 编辑模式或者 Hybrid 编辑模式后，在 Emacs 模式或者插入模式时下使用的 leader 键，这样的话使用 leader 键就不必再进入正常模式后再使用。如果是从终端使用 Spacemacs，默认是 <kbd>C-M-m</kbd> ，如果是以图形化界面启动，则默认是 <kbd>M-RET</kbd> （RET 就是回车键），另外， <kbd>M-RET</kbd> 在终端模式和图形化界面中都可以使用。
 
 - `dotspacemacs-distinguish-gui-tab`
 
-可选的值有 t 和 nil，如果是 nil，在图形化界面的 Spacemacs 中，命令可以被绑定到`C-i`、`TAB`、`C-m`、`RET`这些键中，如果是 t 则不能，默认为 nil
+可选的值有 t 和 nil，如果是 nil，在图形化界面的 Spacemacs 中，命令可以被绑定到 <kdb>C-i</kbd> 、 <kbd>TAB</kbd> 、 <kbd>C-m</kbd> 、 <kbd>RET</kbd> 这些键中，如果是 t 则不能，默认为 nil
 
 - `dotspacemacs-default-layout-name`
 
@@ -670,7 +663,7 @@ vanilla:
 
   可选的值有 t 和 nil，如果是 t，在创建新的 buffer 会自动生成名称，只有开启“按序号跳转 buffer”，这项功能才会生效
 
-  > 通常情况下，Spacemacs 的 mode-line 最左边会显示 buffer 的序号，可以通过按`M-m <序号>` 来进行跳转
+  > 通常情况下，Spacemacs 的 mode-line 最左边会显示 buffer 的序号，可以通过按 <kbd>M-m <序号></kbd> 来进行跳转
 
 - `dotspacemacs-large-file-size`
 
@@ -702,29 +695,29 @@ vanilla:
 
 #### 定义一个重启 Emacs 的快捷键
 
-在 .spacemacs 文件中修改一些配置后，通常需要重启 Spacemacs 才会生效，但按`C-x C-c`退出 Spacemacs 再打开实在麻烦。`restart-emacs`可以快速重启 Emacs，且 Spacemacs 中已经定义好了相关的快捷键`M-m q R`，但是可能不太好按。现在上文的`M-m o`可以派上用场了，Emacs 中一般可以用下面的方式来绑定一个命令到一个键
+在 .spacemacs 文件中修改一些配置后，通常需要重启 Spacemacs 才会生效，但按 <kbd>C-x C-c</kbd> 退出 Spacemacs 再打开实在麻烦。`restart-emacs`可以快速重启 Emacs，且 Spacemacs 中已经定义好了相关的快捷键 <kbd>M-m q R</kbd> ，但是可能不太好按。现在上文的 <kbd> M-m o</kbd> 可以派上用场了，Emacs 中一般可以用下面的方式来绑定一个命令到一个键
 
 ```lisp
 (global-set-key (kbd "<key>") '<function>)
 ```
 
-其中 <key> 是你要绑定的键，<function> 是你希望执行的命令（函数），我希望把`restart-emacs`绑定到`M-m o r`中去，那么我可以
+其中 <key> 是你要绑定的键，<function> 是你希望执行的命令（函数），我希望把`restart-emacs`绑定到 <kbd>M-m o r</kbd> 中去，那么我可以
 
 ```lisp
 (global-set-key (kbd "M-m o r") 'restart-emacs)
 ```
 
-然后就可以用`M-m o r`来重启 Spacemacs 了。同时，之前的快捷键也并没有失效
+然后就可以用 <kbd>M-m o r</kbd> 来重启 Spacemacs 了。同时，之前的快捷键也并没有失效
 
 #### 绑定一个键到 helm-swoop
 
-如果添加了 ivy 这个 layer，那么你现在随意在某个文件按下`C-s`就可以进行更好的全文搜索，helm 中的`helm-swoop`同样可以实现这个功能，你可以按`M-x helm-swoop`，但是更好的方法是将它绑定一个键。ivy 可以直接按`C-s`进行全文搜索是因为 layer 中已经添加了键绑定相关的配置，我们可以手动为`helm-swoop`绑定一个键，方法同上
+如果添加了 ivy 这个 layer，那么你现在随意在某个文件按下 <kbd>C-s</kbd> 就可以进行更好的全文搜索，helm 中的`helm-swoop`同样可以实现这个功能，你可以按`M-x helm-swoop`，但是更好的方法是将它绑定一个键。ivy 可以直接按 <kbd>C-s</kbd> 进行全文搜索是因为 layer 中已经添加了键绑定相关的配置，我们可以手动为`helm-swoop`绑定一个键，方法同上
 
 ```lisp
 (global-set-key (kbd "C-s") 'helm-swoop)
 ```
 
-现在可以使用`C-s`调用`helm-swoop`进行全文搜索了
+现在可以使用 <kbd>C-s</kbd> 调用`helm-swoop`进行全文搜索了
 
 事实上，leader 键的内容远远不止这些，这还只是冰山一角，我不可能讲得面面俱到，否则这个教程也没有存在的意义。更多的内容，还需要你自己去探索
 
@@ -732,10 +725,10 @@ vanilla:
 
 如果你的 ivy 没有添加任何配置，按下`M-x`后应该会出现这个符号“^”（如下图），有了它，你就可以通过书写正则表达式来查找命令，如果你不需要的话，可以用下面的方法关掉
 
-![^](./images/Day07/2021-10-10_17-51.png)
+![M-x 将会显示 ^](./images/Day07/2021-10-10_17-51.png)
 
-1. `M-x customize-variable`，然后输入`ivy-initial-inputs-alist`
-2. 找到`counsel-M-x`这一项，然后按左边的`DEL`删除即可
+1. <kbd>M-x customize-variable</kbd> ，然后输入 `ivy-initial-inputs-alist`
+2. 找到 `counsel-M-x` 这一项，然后按左边的 `DEL` 删除即可
 
 ## **Day08 - Emacs Server**
 
@@ -761,7 +754,7 @@ emacs --daemon
 systemctl --user enable emacs
 ```
 
-你甚至可以直接将 emacsclient 设置为终端的默认编辑器
+你还可以直接将 emacsclient 设置为终端的默认编辑器
 
 ```shell
 export EDITOR='emacsclient -c'
@@ -780,6 +773,8 @@ export EDITOR='emacsclient -c'
 1. 正常情况下修改 .spacemacs 文件中的配置后，在 emacsclient 中并不会生效，而是要重新加载配置之后配置才会生效
 2. 一些关于字体的配置在 emacsclient 中无效，如单独设置中英文字体的配置
 3. Linux 下 emacsclient 无法使用 Fcitx 输入法，可以使用 pyim 或者 emacs-rime 解决
+
+---
 
 ## **Day09 - 更好地编写代码**
 
@@ -812,7 +807,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
     ;; 按 <kbd>C-s</kbd> 才会在旁边显示帮助文档
 ```
 
-打开文档后，你可以使用 <kbd>C-M-v</kbd> 来向下翻看文档，<kbd>C-M-V</kbd> 则为向上
+打开文档后，你可以使用 <kbd>C-M-v</kbd> 来向下翻看文档， <kbd>C-M-V</kbd> 则为向上
 
 使用 Company-box 可以让 Company 使用更加现代的外观，更好看的图标，和更好地文档显示支持
 
@@ -823,7 +818,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 
 效果如图：
 
-![company-box 效果图][./images/Day09/company-box.png]
+![company-box 效果图](./images/Day09/company-box.png)
 
 关于 Company-box 又有一大堆的说明，这里就不过多赘述了。另外，可以使用 <kbd>SPC m l</kbd> 来查看一个 layer 的帮助文档，关于 auto-completion 的其他技巧，大家可以自行探究
 
@@ -867,6 +862,8 @@ Spacemacs 附带了 quickrun，可以直接编译运行代码，支持大部分�
 ```
 
 程序运行完之后，还会留下一个 buffer 不会自动关闭，可以按 <kbd>C-g</kbd> 将其关闭。
+
+Emacs 的 `compile` 命令同样可以编译运行代码文件，不过可能需要你收到输入命令
 
 ## Q&A
 
