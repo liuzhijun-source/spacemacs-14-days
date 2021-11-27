@@ -2,7 +2,7 @@
 
 [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://develop.spacemacs.org)
 
-<center><img src="images/title2.png"></center>
+<p align=center><img src="images/title2.png"></p>
 
 <center>Emacs 是一种生活方式。</center>
 
@@ -12,8 +12,8 @@
 
 另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极指出，我会及时进行修改😉
 
-> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/>
-> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/>
+> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/></br>
+> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/></br>
 > GitHub Page: <https://liuzhijun-source.github.io/spacemacs-14-days/>
 
 **注: 本教程是 Spacemacs 教程而不是 Emacs 教程，建立在你已经学会使用 Emacs 的基础上！**
@@ -36,7 +36,7 @@
   因为要从 GitHub 下载，速度可能有点慢。如果速度太慢的话，可以执行下面这条命令：
 
   ```shell
-  git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git $home/.emacs.d
+  git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git $home/.emacs.d
   ```
 
   Windows 系统默认并没有安装 git，如果你的电脑上没有安装 git 的话，你可以采用下面的方式来手动安装。
@@ -56,7 +56,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 如果速度太慢的话，可以用以下这条命令：
 
 ```shell
-git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
+git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
 ```
 
 安装完 Spacemacs 之后，下次启动 Emacs 就会自动从 Melpa 下载包了，但是 Melpa 的服务器在国外，因为包下载的速度会特别慢，要等很久，可以用更改镜像源的方法解决，我们这里使用清华的镜像源。
@@ -88,7 +88,7 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
 
 打开 .spacemacs 文件，按 <kbd>C-s</kbd> ，搜索`editing-style`，可以找的编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，可以根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。
 
-### 显示行号
+### 显示行号n
 
 > 在 Spacemacs 中，SPC（即空格键）是 Vim 编辑模式下默认的 leader 键，如果你使用 Emacs 编辑模式，默认的 leader 键是 <kbd>M-m</kbd> ，本教程统一使用 <kbd>SPC</kbd> 表示
 
@@ -104,14 +104,16 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
 
 另外，大多是等宽字体并不包含中文字体，因此 Emacs 中的中文大多会以宋体来显示，可以用下面的方法单独设置中文字体。
 
-> 在 .spacemacs 中搜索`user-config`定位到用户配置，然后添加下面的代码：
->
-> ```lisp
-> (set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "Your Font" :size 18 :weight 'normal))
-> ```
->
-> 请将`Your Font`修改为你自己的中文字体，其中`:size`可以更改字体的大小
-> 代码出处：[Emacs China](https://emacs-china.org/t/emacs/15676) 有作修改
+在 .spacemacs 中搜索`user-config`定位到用户配置，然后添加下面的代码：
+
+```lisp
+(dolist (charset '(kana han cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font) charset
+                      (font-spec :family "Your Font"
+                                 :size 14)))
+```
+
+请将`Your Font`修改为你自己的中文字体，其中`:size`可以更改字体的大小
 
 ### 更改主题
 
@@ -766,7 +768,7 @@ export EDITOR='emacsclient -c'
 (setq-default dotspacemacs-enable-server t)
 ```
 
-如果想要关闭已经开启的服务器，可以从 emacsclient 启动 Spacemacs，然后执行`SPC q q`(`M-m q q`)来退出 Emacs 并关闭掉服务器
+如果想要关闭已经开启的服务器，可以从 emacsclient 启动 Spacemacs，然后执行`SPC q q`来退出 Emacs 并关闭掉服务器
 
 ### 目前已知的问题
 
@@ -780,9 +782,17 @@ export EDITOR='emacsclient -c'
 
 本节主要讲述 Spacemacs 中有关于代码编写等方面的使用技巧和操作优化
 
+### 项目管理
+
+Spacemacs 使用 Projectile 管理项目
+
+在你打开一个文件的时候，Spacemacs 应该会自动这个文件所在的目录添加为你的项目，你可以在开始界面的 Project 一栏找到你的项目，也可以使用 <kbd>SPC p p</kbd> 来切换项目，使用 <kbd>SPC p f </kbd> 可以在项目里查找文件，你也可以使用 <kbd>M-x projectile-add-known-project</kbd> 来手动添加项目。Spacemacs 中所有的 Projectile 操作基本都在 <kbd>SPC p</kbd> 中，读者可以自行查看
+
+Treeemacs 同样可以进行项目管理，但是它并不会自动把当前项目添加到侧边栏中，你需要手动添加： <kbd>M-x `treemacs-add-project-to-workspacemacs`</kbd>
+
 ### Company-mode 的操作优化
 
-> Spacemacs 的 auto-completion layer 默认使用 Company-mode 作为补全后端
+Spacemacs 的 auto-completion layer 默认使用 Company-mode 作为补全后端
 
 Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中公共的部分和移动到下一个补全项，使用回车键来选中当前的项，如果你更习惯使用 Tab 来直接补全的话（即按 Tab 和回车都是直接补全自动完成列表的第一个项），你可以使用下面的代码：
 
@@ -791,25 +801,25 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
     '((auto-completion :variables auto-completion-tab-key-behavior 'complete)))
 ```
 
-你还可以让完成列表根据用户的使用习惯来进行排序，不过可能降低其速度，但是实测影响并不是很大
+你还可以让完成列表根据用户的使用习惯来进行排序，不过可能降低其速度
 
 ```lisp
 (setq-default dotspacemacs-configuration-layers
     '((auto-completion :variables auto-completion-enable-sort-by-usage t)))
 ```
 
-在写代码的时候没有帮助文档那个怎么行？可以使用 `auto-completion-enable-help-tooltip`
+如果在写代码时需要使用帮助文档，可以使用 `auto-completion-enable-help-tooltip`
 
 ```lisp
 (setq-default dotspacemacs-configuration-layers
     '((auto-completion :variables auto-completion-enable-help-tooltip t)))
     ;; 设置为 t 可以在选中一个完成项自动显示其文档，将其改为 `manual` 后
-    ;; 按 <kbd>C-s</kbd> 才会在旁边显示帮助文档
+    ;; 按 M-h 或 C-h 才会在旁边显示帮助文档
 ```
 
 打开文档后，你可以使用 <kbd>C-M-v</kbd> 来向下翻看文档， <kbd>C-M-V</kbd> 则为向上
 
-使用 Company-box 可以让 Company 使用更加现代的外观，更好看的图标，和更好地文档显示支持
+使用 Company-box 可以让 Company 使用更加现代的外观和更好的文档显示支持（我的 KDE Plasma 桌面上默认的文档显示起来会很模糊）
 
 ```lisp
 (setq-default dotspacemacs-configuration-layers
@@ -821,6 +831,14 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 ![company-box 效果图](./images/Day09/company-box.png)
 
 关于 Company-box 又有一大堆的说明，这里就不过多赘述了。另外，可以使用 <kbd>SPC m l</kbd> 来查看一个 layer 的帮助文档，关于 auto-completion 的其他技巧，大家可以自行探究
+
+### 打开代码长度基准线
+
+一般情况下，一行代码的长度不宜超过 80 个字符，如果你希望在第 80 列显示一条竖线来提醒你，可以使用 <kbd>M-x `spacemacs/toggle-fill-column-indicator`</kbd><kbd>SPC t f</kbd>，如果需要全局启用，在 user-config 中下面的代码，需要注意的是，加入这行代码后，Spacemacs的开始界面也会显示这条竖线
+
+```lisp
+(display-global-fill-column-indicator-mode 1)
+```
 
 ### 标签栏
 
@@ -838,8 +856,8 @@ Emacs 的 buffer 切换不够直观、方便，可以使用 `tab-bar-mode` 解�
 
 Emacs 有自己的错误跳转函数，兼容 flycheck、flymake
 
-- next-error <kbd>M-m c n</kbd> 跳转到下一个错误
-- previous-error <kbd>M-m c N</kbd> 跳转到上一个错误
+- next-error <kbd>SPC c n</kbd> 跳转到下一个错误
+- previous-error <kbd>SPC c N</kbd> 跳转到上一个错误
 
 Spacemacs 默认使用 flycheck 进行语法检查，以下为 flycheck 的跳转函数
 
@@ -853,9 +871,11 @@ Spacemacs 默认使用 flycheck 进行语法检查，以下为 flycheck 的跳�
 (global-set-key (kbd "M-p") 'flycheck-previous-error)
 ```
 
+如果想要显示错误列表，可以使用 <kbd>M-x flycheck-error-list-mode</kbd>
+
 ### 快速运行代码
 
-Spacemacs 附带了 quickrun，可以直接编译运行代码，支持大部分的语言。直接使用 <kbd>M-x quickrun</kbd> 即可，或者 <kbd>M-m x x</kbd> 。使用 quickrun 运行的程序，会在10秒后自动关闭，可以通过设置`quickrun-timeout-seconds`来防止它关闭：
+spacemacs 附带了 quickrun，可以直接编译运行代码，支持大部分的语言。直接使用 <kbd>M-x quickrun</kbd> 即可，或者 <kbd>SPC x x</kbd> 。使用 quickrun 运行的程序，会在10秒后自动关闭，可以通过设置`quickrun-timeout-seconds`来防止它关闭：
 
 ```lisp
 (setq quickrun-timeout-seconds nil) ;; 将该变量设置为 nil
@@ -863,7 +883,20 @@ Spacemacs 附带了 quickrun，可以直接编译运行代码，支持大部分�
 
 程序运行完之后，还会留下一个 buffer 不会自动关闭，可以按 <kbd>C-g</kbd> 将其关闭。
 
-Emacs 的 `compile` 命令同样可以编译运行代码文件，不过可能需要你收到输入命令
+Emacs 的 `compile` 命令同样可以编译运行代码文件，不过可能需要你手动输入命令
+
+### 终端支持
+
+默认的终端有 eshell 和 shell，但两者都有些许一言难尽的地方，如果需要更好的终端支持，可以添加 shell 到你的 layer 中
+
+```lisp
+(setq-default dotspacemacs-configuration-layers
+    '(((shell :variables
+              shell-default-height 30
+              shell-default-position 'bottom))))
+```
+
+然后，<kbd>SPC '</kbd> 即可在 Spacemacs 中打开系统的 shell。另外，<kbd>SPC !</kbd> 可以在 minibuffer 中临时执行 shell 命令
 
 ## Q&A
 
