@@ -36,7 +36,7 @@
   因为要从 GitHub 下载，速度可能有点慢。如果速度太慢的话，可以执行下面这条命令：
 
   ```shell
-  git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git $home/.emacs.d
+  git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.git $home/.emacs.d
   ```
 
   Windows 系统默认并没有安装 git,你可以采用下面的方式来手动安装。
@@ -56,7 +56,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 如果速度太慢的话，可以用下面这条命令：
 
 ```shell
-git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
+git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.git ~/.emacs.d
 ```
 
 ### 第一次启动 Spacemacs
@@ -91,7 +91,7 @@ git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~
 
 打开 .spacemacs 文件，按 <kbd>C-s</kbd> ，搜索`editing-style`，可以找到编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。
 
-### 显示行号n
+### 显示行号
 
 > 在 Spacemacs 中，SPC（即空格键）是 Vim 编辑模式下默认的 leader 键，如果你使用 Emacs 编辑模式，默认的 leader 键是 <kbd>M-m</kbd> ，本教程统一使用 <kbd>SPC</kbd> 表示
 
