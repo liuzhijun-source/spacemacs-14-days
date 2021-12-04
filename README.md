@@ -25,9 +25,9 @@
 
 ### Windows 安装 Spacemacs
 
-- 已安装 git
+- 通过 git 安装
 
-  如果你的电脑安装了 git 的话，打开 PowerShell，然后执行以下命令来安装 Spacemacs：
+  如果你的电脑安装了 git 的话，打开 PowerShell，然后执行下面这条命令来安装 Spacemacs：
 
   ```shell
   git clone https://github.com/syl20bnr/spacemacs $home/.emacs.d
@@ -39,29 +39,32 @@
   git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git $home/.emacs.d
   ```
 
-  Windows 系统默认并没有安装 git，如果你的电脑上没有安装 git 的话，你可以采用下面的方式来手动安装。
+  Windows 系统默认并没有安装 git,你可以采用下面的方式来手动安装。
 
-- 没有安装 git
+- 手动安装
 
   可以在 Spacemacs 的 [GitHub 仓库](https://github.com/syl20bnr/spacemacs#install-spacemacs-in-windows)下载 Spacemacs 的源码压缩包，如果速度太慢的话，可以在 Spacemacs 的[镜像源仓库](https://codechina.csdn.net/mirrors/syl20bnr/spacemacs)下载，下载完成后解压缩并将文件夹命名为`.emacs.d`，然后放置到主目录下即可。
 
 ### Linux 和 macOS 安装 Spacemacs
 
-Linux 和 macOS 通常都默认安装了 git，打开终端，然后执行下面的命令来安装：
+Linux 和 macOS 通常都默认安装了 git，打开终端，然后执行下面这条命令来安装：
 
 ```shell
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ```
 
-如果速度太慢的话，可以用以下这条命令：
+如果速度太慢的话，可以用下面这条命令：
 
 ```shell
 git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~/.emacs.d
 ```
 
-安装完 Spacemacs 之后，下次启动 Emacs 就会自动从 Melpa 下载包了，但是 Melpa 的服务器在国外，因为包下载的速度会特别慢，要等很久，可以用更改镜像源的方法解决，我们这里使用清华的镜像源。
+### 第一次启动 Spacemacs
+安装完 Spacemacs 之后，启动 Emacs 就会自动从 Melpa 下载包(packages)了，但是 Melpa 的服务器在国外，所以包下载的速度会特别慢。我们可以更改镜像源解决这个问题，我们这里使用清华的镜像源为例。
 
-启动 Emacs 时，它会问你想要使用那种编辑模式（Vim或Emacs），根据自己的喜好选择好之后回车即可，然后会询问你是想安装标准版的 Spacemacs 还是精简版的 Spacemacs  `minimal`，同样自己选择之后回车即可。此时应该会开始下载包了，并且会在主目录下生成一个`.spacemacs`文件。这时通过任务管理器或系统监视器关闭 Emacs，然后在`.spacemacs`中找到`dotspacemacs/user-init()`，然后在里面添加下面的代码：
+启动 Emacs 时，它会问你想要使用那种编辑模式 vim(默认)或是 emacs，根据自己的喜好选择好之后回车即可，接着会询问你是想安装标准版的 Spacemacs(默认) 还是精简版的 Spacemacs-base，同样自己选择之后回车即可。
+
+此时应该会开始下载包了，并且会在主目录下生成一个`.spacemacs`文件。这时通过任务管理器或系统监视器关闭 Emacs，然后在`.spacemacs`中找到`dotspacemacs/user-init()`，在这个函数里面添加如下的代码：
 
 ```lisp
 (setq configuration-layer-elpa-archives
@@ -86,7 +89,7 @@ git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~
 
 在上一节安装 Spacemacs 时，Spacemacs 让我们选择自己的编辑模式（Vim和Emacs），安装完 Spacemacs 后如果我们对当前的编辑模式不满意，可以在`.spacemacs`文件中进行更改。
 
-打开 .spacemacs 文件，按 <kbd>C-s</kbd> ，搜索`editing-style`，可以找的编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，可以根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。
+打开 .spacemacs 文件，按 <kbd>C-s</kbd> ，搜索`editing-style`，可以找到编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。
 
 ### 显示行号n
 
@@ -122,6 +125,8 @@ git clone -b develop https://codechina.csdn.net/mirrors/syl20bnr/spacemacs.git ~
 - atom-one-dark
 - dracula
 - monokai
+
+按 <kbd>SPC T n</kbd> 可以快速切换主题.
 
 ### 用户配置
 
