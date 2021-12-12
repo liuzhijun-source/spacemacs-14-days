@@ -27,13 +27,13 @@
 
 - 通过 git 安装
 
-  如果你的电脑安装了 git 的话，打开 PowerShell，然后执行下面这条命令来安装 Spacemacs：
+如果你的电脑安装了 git 的话，打开 PowerShell，然后执行下面这条命令来安装 Spacemacs：
 
   ```shell
   git clone https://github.com/syl20bnr/spacemacs $home/.emacs.d
   ```
 
-  因为要从 GitHub 下载，速度可能有点慢。如果速度太慢的话，可以执行下面这条命令：
+  因为要从 GitHub 下载，速度可能有点慢。如果速度太慢的话，可以从 CodeChina 的镜像进行安装：
 
   ```shell
   git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.git $home/.emacs.d
@@ -53,7 +53,7 @@ Linux 和 macOS 通常都默认安装了 git，打开终端，然后执行下面
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ```
 
-如果速度太慢的话，可以用下面这条命令：
+如果速度太慢的话，可以从 CodeChina 的镜像进行安装：
 
 ```shell
 git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.git ~/.emacs.d
@@ -64,7 +64,7 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.g
 
 启动 Emacs 时，它会问你想要使用那种编辑模式 vim(默认)或是 emacs，根据自己的喜好选择好之后回车即可，接着会询问你是想安装标准版的 Spacemacs(默认) 还是精简版的 Spacemacs-base，同样自己选择之后回车即可。
 
-此时应该会开始下载包了，并且会在主目录下生成一个`.spacemacs`文件。这时通过任务管理器或系统监视器关闭 Emacs，然后在`.spacemacs`中找到`dotspacemacs/user-init()`，在这个函数里面添加如下的代码：
+此时应该会开始下载包了，并且会在主目录下生成一个 `.spacemacs` 文件。通过任务管理器或系统监视器关闭 Emacs，然后在`.spacemacs`中找到 `dotspacemacs/user-init()`（可以按 <kbd>C-s</kbd> 进行文本搜索），在这个函数里面添加如下的代码：
 
 ```lisp
 (setq configuration-layer-elpa-archives
@@ -77,7 +77,13 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.g
 
 ![添加完成后的模样](images/Day01/mirror_example.png)
 
-此时再启动 Emacs 就会从清华源开始下载包，速度应该会快很多，然后耐心等待它下载完就可以了。全部下载完之后，重启一下 Emacs，就可以看到 Spacemacs 的 Logo 了。
+此时再启动 Emacs 就会从清华源开始下载包，速度应该会快很多，然后耐心等待它下载完就可以了。全部下载完之后，重启一下 Emacs，就可以看到 Spacemacs 的图标了。
+
+如果你选择的不是 Emacs 的编辑模式，那么在安装完所有包后可能会有一条关于 `evil-want-keybinding` 的警告，你需要在 .spacemacs 中的 `dotspacemacs/user-init` 添加：
+
+```lisp
+(setq evil-want-keybinding nil)
+```
 
 ---
 
@@ -87,7 +93,7 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.g
 
 ### 设置适合自己的编辑模式
 
-在上一节安装 Spacemacs 时，Spacemacs 让我们选择自己的编辑模式（Vim和Emacs），安装完 Spacemacs 后如果我们对当前的编辑模式不满意，可以在`.spacemacs`文件中进行更改。
+在上一节安装 Spacemacs 时，Spacemacs 让我们选择自己的编辑模式（Vim或Emacs），安装完 Spacemacs 后如果我们对当前的编辑模式不满意，可以在`.spacemacs`文件中进行更改。
 
 打开 .spacemacs 文件，按 <kbd>C-s</kbd> ，搜索`editing-style`，可以找到编辑模式的配置选项。可选的值有 Vim、Emacs、Hybrid，根据自己的喜好选择，也可以根据[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#editing-styles)进行进一步的配置。
 
@@ -95,13 +101,13 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.g
 
 > 在 Spacemacs 中，SPC（即空格键）是 Vim 编辑模式下默认的 leader 键，如果你使用 Emacs 编辑模式，默认的 leader 键是 <kbd>M-m</kbd> ，本教程统一使用 <kbd>SPC</kbd> 表示
 
-按 <kbd>SPC f e d</kbd> 可以快速打开 .spacemacs 文件，按 <kbd>C-s</kbd> 搜索`line-numbers`可以找到一个叫做`dotspacemacs-line-numbers`的选项，这个选项可以显示行号并设置行号的风格，可选的值有`visual`、`relative`还有`t`，visual 和 relative 都是显示相对行号，且两者并没有什么区别，t 则是显示普通的行号，可以根据自己的需要选择。
+按 <kbd>SPC f e d</kbd> 可以快速打开 .spacemacs 文件，按 <kbd>C-s</kbd> 搜索`line-numbers`可以找到一个叫做`dotspacemacs-line-numbers`的选项，这个选项可以显示行号并设置行号的风格，可选的值有`visual`、`relative`还有`t`，visual 和 relative 都是显示相对行号，但是 visual 虽然显示相对行号，但是在使用命令来跳转时还是会按绝对行号来进行跳转。t 显示普通的行号（绝对行号）
 
 ### 设置字体和字体大小
 
 按 <kbd>C-s</kbd> 搜索`font`一般可以找到一个名为`dospacemacs-default-font`的选项，更改双引号中的内容可以修改字体，Spacemacs 默认的字体是 Source Code Pro，可以根据需要改成自己喜欢的字体。
 
-> Windows 系统默认并没有安装 Source Code Pro 字体，可以搜索进行安装，或者更改为自己喜欢的字体，Windows 一般使用 Consolas 字体。
+> Windows 系统默认并没有安装 Source Code Pro 字体，可以搜索进行安装，或者更改为已经安装的字体，Windows 一般使用 Consolas 字体。
 
 `:size`选项可以更改字体的大小，不同的字体大小不一樣，所以个值并不是固定的，得根据自身需要选择，`:weight`可以修改字体的字重，`:width`可以修改字体的宽度。
 
@@ -116,17 +122,21 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.g
                                  :size 14)))
 ```
 
-请将`Your Font`修改为你自己的中文字体，其中`:size`可以更改字体的大小
+请将`Your Font`修改为你自己的中文字体，其中`:size`可以更改字体的大小。
+
+Emacs 默认无法显示 Emoji 颜文字，你可以单独设置 Emoji 字体，例如：
+
+```lisp
+(set-fontset-font t 'unicode (font-spec :family "Noto Color Emoji" :size 16))
+```
+
+字体名依据你使用的 Emoji 字体而定
 
 ### 更改主题
 
-在 .spacemacs 搜索`theme`可以找到一个叫做`dotsapcemacs-themes`的选项，在里面可以选择自己想要的主题，最靠前的是默认主题，键入主题包名后，下次启动 Emacs 时会自动下载并安装主题，可以根据自己的喜好选择。常见的主题有：
+在 .spacemacs 搜索`theme`可以找到一个叫做`dotsapcemacs-themes`的选项，在里面可以选择自己想要的主题，最靠前的是默认主题，键入主题包名后，下次启动 Emacs 时会自动下载并安装主题，默认的 spacemacs-dark 和 spacemacs-light 已经很好看了，如果你不喜欢的话，可以去 [Emacs Galley](https://emacsthemes.com/ "一个 Emacs 主题展示板")
 
-- atom-one-dark
-- dracula
-- monokai
-
-按 <kbd>SPC T n</kbd> 可以快速切换主题.
+按 <kbd>SPC T s</kbd> 可以快速切换主题.
 
 ### 用户配置
 
@@ -147,17 +157,11 @@ before packages are loaded."
 
 ## **Day03 - Spacemacs 中的 layer（上）**
 
-本文将用一种通俗的方式讲解 layer 是什么，并将会添加一些常用的 layer 和其配置。
-
 ### layer 是什么？
 
-layer 的中文意思是“层”，Spacemacs 中的一个 layer，即一个配置层。配置层的大体含义是将多个l你需要的包（插件）和它们的配置等打包到一个地方，就是层。
-如果需要使用 Spacemacs 中对应的功能，就只需要添加对应的配置层就可以了。
+layer 的中文意思是“层”，Spacemacs 中的一个 layer，即一个配置层。配置层的大体含义是将多个你需要的包以及包的配置等集中到一个地方，就是层。如果需要使用 Spacemacs 中对应的功能，就只需要添加对应的配置层就可以了。
 
-如果你需要把一层楼修建成厨房，你需要买冰箱、锅、洗菜台、切菜板等好多好多的东西，而且都需要自己去布置；但是，你也可以直接购买已经装修成一个厨房的一层楼，这对你来说很省事，很方便。
-
-layer 也是如此，它极大的简化了 Emacs 用户安装和使用配置包的过程。举个例子，如果你希望 Emacs 可以编写 Python 程序，
-你需要安装对应的语法检查工具、自动补全后端和对应的语言服务器而使用 layer 的话，你只需要在 .spacemacs 文件的某个地方写上 python 这个词就可以了。
+layer 极大的简化了 Emacs 用户安装和使用配置包的过程。如果你希望 Spacemacs 可以编写 Python 程序，你需要安装对应的语法检查工具、自动补全后端和对应的语言服务器，而使用 layer 的话，你只需要在 .spacemacs 文件的某个地方写上 python 这个词就可以了。
 
 同时，得益于高度整合的功能，layer 也更便于管理，无论是安装还是卸载，都只需要在对应的地方添加或删除某些文本。
 
@@ -232,7 +236,7 @@ layer 也是如此，它极大的简化了 Emacs 用户安装和使用配置包�
 
 - [unicode-fonts](https://develop.spacemacs.org/layers/LAYERS.html#unicode-fonts)
 
-提供了更好的 unicode 字符支持，包括更好的字体显示和字体连字支持
+提供了 unicode 字符支持，包括更好的字体显示和字体连字支持
 
 - [eaf](https://develop.spacemacs.org/layers/LAYERS.html#eaf)
 
@@ -249,7 +253,7 @@ layer 也是如此，它极大的简化了 Emacs 用户安装和使用配置包�
 
 ## **Day04 - Spacemacs 中的 layer（下）**
 
-本节将介绍一些使用頻率较高的 layer 的配置
+本节将介绍一些使用频率较高的 layer 的配置
 
 > 本版块将会长期更新
 
@@ -262,7 +266,7 @@ layer 也是如此，它极大的简化了 Emacs 用户安装和使用配置包�
 在 treemacs 中可以使用 <kbd>C-n</kbd> 和 <kbd>C-p</kbd> 来上下移动选中文件，按回车键即可打开一个文件
 
 | 按键 | 对应的操作              |
-| :--: | :---------------------: |
+|:----:|:-----------------------:|
 | cf   | 新建文件                |
 | cd   | 新建目录                |
 | R    | 重命名                  |
@@ -403,7 +407,7 @@ Spacemacs 绝大部分的配置都位于此，你可以在此修改配置中可�
 
 - `dotspacemacs/user-init`
 
-一般在这里设置你需要使用的 elpa 源
+这里的内容会在 Emacs 启动前开始加载，一般在这里设置你需要使用的 elpa 源，你应该尽量把用户配置放在 `dotspacemacs/user-config` 中
 
 - `dotspacemacs/user-config`
 
@@ -690,7 +694,7 @@ vanilla:
 
 ---
 
-## **Day07 - 善用 leader 键、一些建议的配置**
+## **Day07 - 善用 leader 键和一些建议的配置**
 
 ### 用 leader 键定义自己的快捷键
 
@@ -777,9 +781,10 @@ export EDITOR='emacsclient -c'
 
 ### 目前已知的问题
 
-1. 正常情况下修改 .spacemacs 文件中的配置后，在 emacsclient 中并不会生效，而是要重新加载配置之后配置才会生效
+1. 正常情况下修改 .spacemacs 文件中的配置后，在 emacsclient 中并不会生效，而是要重新加载配置之后配置才会生效。严格来说这并不算是问题
 2. 一些关于字体的配置在 emacsclient 中无效，如单独设置中英文字体的配置
 3. Linux 下 emacsclient 无法使用 Fcitx 输入法，可以使用 pyim 或者 emacs-rime 解决
+4. 有关 Spacemacs 全屏启动的设置并不会在启动 emacsclient 时生效
 
 ---
 
@@ -839,7 +844,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 
 ### 打开代码长度基准线
 
-一般情况下，一行代码的长度不宜超过 80 个字符，如果你希望在第 80 列显示一条竖线来提醒你，可以使用 <kbd>M-x `spacemacs/toggle-fill-column-indicator`</kbd><kbd>SPC t f</kbd>，如果需要全局启用，在 user-config 中下面的代码，需要注意的是，加入这行代码后，Spacemacs的开始界面也会显示这条竖线
+一般情况下，一行代码的长度不宜超过 80 个字符，如果你希望在第 80 列显示一条竖线来提醒你，可以使用 <kbd>M-x spacemacs/toggle-fill-column-indicator</kbd><kbd>SPC t f</kbd>，如果需要全局启用，在 user-config 中下面的代码，需要注意的是，加入这行代码后，Spacemacs的开始界面也会显示这条竖线
 
 ```lisp
 (display-global-fill-column-indicator-mode 1)
@@ -847,7 +852,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 
 ### 标签栏
 
-Emacs 的 buffer 切换不够直观、方便，可以使用 `tab-bar-mode` 解决，它会在 Emacs 顶部显示一个标签栏。Spacemacs 中默认已经安装了这个包
+Emacs 的 buffer 切换不够直观、方便，可以使用 `tab-bar-mode`，它会在 Emacs 顶部显示一个标签栏。Spacemacs 中默认已经安装了这个包
 
 可以采取命令或者使用鼠标的方式来完成标签栏的切换，Spacemacs 默认并没有绑定相关的快捷键，大家可以自行绑定
 
@@ -907,7 +912,7 @@ Emacs 的 `compile` 命令同样可以编译运行代码文件，不过可能需
 
 ### 为什么要使用 Emacs 中的输入法？
 
-1. 有一些 Linux 发行版（如 Arch Linux）下的 Emacs 一开始可能并不能使用系统的 [Fcitx 输入法](https://fcitx-im.org/wiki/Fcitx/zh-hans0)
+1. 有一些 Linux 发行版（如 Arch Linux）下的 Emacs 一开始可能并不能使用系统的 [Fcitx 输入法](https://fcitx-im.org/wiki/Fcitx/zh-hans0)和 iBus 输入法
 2. Emacs 中的输入法可以和 Emacs 更好的兼容
 3. 输入命令、搜索文件、切换缓冲区时可以自动关闭输入法，在编写代码、文档、GTD 时可以根据上下文来自动切换中英文模式
 
@@ -951,7 +956,7 @@ emacs-rime 默认会在 minibuffer 显示候选框，这也是推荐的方式，
 ;; 具体可参见文档
 ```
 
-如果你不知道怎么配置 Rime 输入法，可以选择直接使用现成的 Rime 配置，如 [Clover](https://github.com/fkxxyz/rime-cloverpinyin)，这是一个很优秀的 Rime 输入方案，且内置了搜狗词库。emacs-rime 不会使用系统 Rime 输入法的配置文件，它有自己的配置文件，可以通过 <kbd>M-x rime-open-configuration</kbd> 打开，安装好 Clover 之后，在 emacs-rime 的配置文件中添加下面的内容就可以在 emacs-rime 中使用 clover 输入方案了，其中 "menu/page_size" 用来设置候选词的个数
+如果你不知道怎么配置 Rime 输入法，可以选择直接使用现成的 Rime 配置，如 [Clover](https://github.com/fkxxyz/rime-cloverpinyin)，这是一个很优秀的 Rime 输入方案，且内置了搜狗词库。emacs-rime 不会使用系统 Rime 输入法的配置文件，它有自己的配置文件，可以通过 <kbd>M-x rime-open-configuration</kbd> 打开，安装好 Clover 之后，在 emacs-rime 的配置文件中添加下面的内容就可以在 emacs-rime 中使用 clover 输入方案了，其中 `"menu/page_size"` 用来设置候选词的个数
 
 ```yaml
 patch:
