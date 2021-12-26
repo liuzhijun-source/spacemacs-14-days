@@ -12,8 +12,8 @@
 
 另外，作者本人也是一个 Spacemacs 的初学者，所以这不但是大家的学习过程，也是我自己的学习过程，教程中的错误和需要改进的地方，望大家积极指出，我会及时进行修改😉
 
-> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/>
-> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/>
+> GitHub 项目地址: <https://github.com/liuzhijun-source/spacemacs-14-days/></br>
+> Gitee 镜像地址:  <https://gitee.com/liuzhijun-source/spacemacs-14-days/></br>
 > GitHub Page: <https://liuzhijun-source.github.io/spacemacs-14-days/>
 
 **注: 本教程是 Spacemacs 教程而不是 Emacs 教程，建立在你已经学会使用 Emacs 的基础上！**
@@ -925,7 +925,7 @@ Emacs 的 `compile` 命令同样可以编译运行代码文件，不过可能需
 > chinese layer 中已经附带了 pyim
 
 - pyim 是纯 elisp 实现的输入法，因此速度会比较慢，但是并不折腾，配置简单，不过它默认的词库很小，因此打起字来体验不是很好，而如果添加的词库较大的话，速度会减慢。
-- emacs-rime 调用的是系统的 [Rime 输入法](https://rime.im/)，因此不会有卡顿的问题，同时使用起来和系统的 Rime 输入法几乎没有区别，可以直接使用系统中 Rime 输入法或 Fcitx 输入法的词库。但是要是用它，你得先在系统中安装 Rime 输入法，因为调用的时系统的输入法，所以配置的时候也得用 Rime 的配置文件来，因此你可能需要学习配置 Rime。
+- emacs-rime 调用的是系统的 [Rime 输入法](https://rime.im/)，因此不会有卡顿的问题，同时使用起来和系统的 Rime 输入法几乎没有区别，可以直接使用系统中 Rime 输入法或 Fcitx 输入法的词库。但是要使用它，你得先在系统中安装 Rime 输入法，因为调用的是系统的输入法，所以配置的时候也得用 Rime 的配置文件来，因此你可能需要学习配置 Rime。
 
 以上两个输入法都支持自动切换中英文，安装方法和配置方法可以参见这两个输入法的文档
 
@@ -966,6 +966,19 @@ patch:
 ```
 
 如果是使用 pyim 的话，可以试试[这个词库](https://github.com/redguardtoo/pyim-tsinghua-dict)，在提供了较流行的词库的同时，防止 pyim 的速度过慢。
+
+### 禁用系统输入法（针对 Linux 系统）
+
+你可能不想在 Spacemacs 中使用系统的输入法（如 Fcitx 和 iBus），可以通过修改 .spacemacs.env 文件来进行禁用。
+
+在你安装好 Spacemacs 之后，你应该可以发现主目录出现了一个 .spacemacs.env 文件，它用来单独设置 Spacemacs 的环境变量，在里面分别找到下面的变量
+
+- GTK\_IM\_MODULE
+- QT\_IM\_MODULE
+- SDL\_IM\_MODULE
+- XMODIFIERS=@im
+
+然后将它们的值都设置为 uid 即可，可能需要重启系统，如果你使用的 Emacs 本来就不可以使用系统的输入法，那么可以略过此步骤
 
 ## Q&A
 
