@@ -1,7 +1,7 @@
 # Day01 - Spacemacs 的安装
 
 > 在开始之前，确保你的电脑上已经安装了 Emacs，如果是 Windows 系统的话，确保你已经添加了 HOME 环境变量
-> 如果不知道 Windows 系统怎么添加 HOME 环境变量，可以[点击这里](添加HOME环境变量.md)
+> 如果不知道 Windows 系统怎么添加 HOME 环境变量，可以[查看](emacs_wrong.md) Emacs 疑难杂症板块
 
 ## Windows 安装 Spacemacs
 
@@ -56,7 +56,7 @@ git clone https://codechina.csdn.net/mirrors/syl20bnr/spacemacs/-/tree/develop.g
 
 添加完成后应该如下图所示：
 
-![添加完成后的模样](./mirror_example.png)
+![添加完成后的模样](mirror_example.png)
 
 此时再启动 Emacs 就会从清华源开始下载包，速度应该会快很多，然后耐心等待它下载完就可以了。全部下载完之后，重启一下 Emacs，就可以看到 Spacemacs 的图标了。
 

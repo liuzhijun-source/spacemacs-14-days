@@ -6,7 +6,7 @@
 
 ## Treemacs
 
-### - 基本操作
+### 基本操作
 
 > 以下操作请在 treemacs 缓冲区内完成，可以按 <kbd>SPC 0</kbd> 来切换到 treemac 缓冲区
 
@@ -38,7 +38,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
 
 或者，你可以使用 <kbd>M-x treemacs-root-up</kbd> 和 <kbd>M-x treemacs-root-down</kbd> 来移动目录
 
-### - 自动刷新
+### 自动刷新
 
 在你删除或者新建一些文件之后，treemacs 不会立即刷新当前的目录试图，你需要手动刷新。如果希望自动
 刷新的话，请更改 dotspacemacs-configuration-layers 中的 treemacs
@@ -47,7 +47,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
 (treemacs :variables treemacs-use-filewatch-mode t)
 ```
 
-### - 主题
+### 主题
 
 你可以使用 all-the-icons 主题来显示 treemacs 上的图标，配置方式同上
 
@@ -64,12 +64,12 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
 
 ## LSP
 
-### - 安装语言服务器
+### 安装语言服务器
 
 在打开相应的程序文件后，你可以通过输入 <kbd>M-x lsp</kbd> 手动来安装对应的语言服务器，这种方法适用于无法自动
 安装语言服务器的情况
 
-### - header line 的显示和隐藏
+### header line 的显示和隐藏
 
 启用 lsp 并安装对应语言的支持之后，通常会在相关的代码文件上显示显示当前文件的路径和图标，如果你想要
 隐藏的话，可以在 user-config 中添加`lsp-headerline-breadcrumb-enable nil`，你也
@@ -100,7 +100,7 @@ treemacs 提供了一个简单而强大的文件导航目录，通常情况下�
               ;; 显示项目名称和文件名称
 ```
 
-### - 代码错误统计
+### 代码错误统计
 
 默认情况下，lsp 会统计当前项目下所有的错误，如果要禁用，应该修改`lsp-modeline-code-actions-enable`
 

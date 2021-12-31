@@ -1,6 +1,6 @@
 # Day06 - Spacemacs 的进阶配置（下）
 
-书接上文⬇️
+书接上文⬇
 
 - `dotspacemacs-initial-scratch-message`
 

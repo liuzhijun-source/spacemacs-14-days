@@ -32,7 +32,7 @@ Spacemacs 自己生成的配置，同样不建议自己去修改
 
 接下来开始讲解，可配置的选项按出现的位置进行排序（从上到下）
 
-### - dotspacemacs/layers
+### dotspacemacs/layers
 
 该部分主要是关于 Spacemacs 中 layer 的声明和配置，和 Spacemacs 安装软件包的行为的配置
 
@@ -103,7 +103,7 @@ dotspacemacs-configuration-layers
 
 used-only 会安装你*使用的包*，而删除那些*你没有使用的包*，used-but-keep-unused 会安装*你使用的包*，但不会删除*你没有使用的包*，all 会安装 Spacemacs 支持的**所有包**
 
-### - dotspacemacs/init
+### dotspacemacs/init
 
 这里包含了 Spacemacs 中绝大部分的可配置选项，你不应该把你自己的配置代码添加在这里，并且这个部分的内容会在 Spacemacs 启动的最开始生效。注：有部分不影响使用的配置没有讲到（其实是因为不知道）
 
@@ -127,7 +127,7 @@ used-only 会安装你*使用的包*，而删除那些*你没有使用的包*，
 
 可选的值有 t 和 nil，如果是t，并且你使用的 Spacemacs 不是 develop 分值的话，将会在启动时检查更新。默认为 nil
 
->注意，我们默认安装的 Spacemacs 就是 develop 分支，develop 不能通过这个来更新 Spacemacs 版本，我们也没有必要频繁的更新 Spacemacs。同时，我也并不推荐使用 master 分支的 Spacemacs，因为 master 分支的 Spacemacs 和文档距离上次更新都已经将近五年了。。。
+> 注意，我们默认安装的 Spacemacs 就是 develop 分支，develop 不能通过这个来更新 Spacemacs 版本，我们也没有必要频繁的更新 Spacemacs。同时，我也并不推荐使用 master 分支的 Spacemacs，因为 master 分支的 Spacemacs 和文档距离上次更新都已经将近五年了。
 
 - `dotspacemacs-editing-style`
 

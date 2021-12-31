@@ -1,4 +1,4 @@
-# ****Day02 - Spacemacs 的基本配置**
+# Day02 - Spacemacs 的简单配置
 
 > 在阅读本节前，确保你已经正确安装好了 Spacemacs，且启动之后没有任何报错。
 
@@ -16,9 +16,11 @@
 
 ## 设置字体和字体大小
 
-按 <kbd>C-s</kbd> 搜索`font`一般可以找到一个名为`dospacemacs-default-font`的选项，更改双引号中的内容可以修改字体，Spacemacs 默认的字体是 Source Code Pro，可以根据需要改成自己喜欢的字体。
+按 <kbd>C-s</kbd> 搜索`font`一般可以找到一个名为`dospacemacs-default-font`的选项，更改双引号中的内容可以修改字体，Spacemacs 默认的字体是 Source Code Pro，建议根据自己的喜好改成自己喜欢的**等宽**字体
 
-> Windows 系统默认并没有安装 Source Code Pro 字体，可以搜索进行安装，或者更改为已经安装的字体，Windows 一般使用 Consolas 字体。
+如果你使用 Windows 系统的话，Consolas 应该是你最熟悉的等宽字体了，如果你是用 macOS 系统的话，可以试试 Menlo
+
+**Windows 系统默认并没有安装 Source Code Pro 字体，可以搜索进行安装，或者更改为已经安装的字体。**
 
 `:size`选项可以更改字体的大小，不同的字体大小不一樣，所以个值并不是固定的，得根据自身需要选择，`:weight`可以修改字体的字重，`:width`可以修改字体的宽度。
 
