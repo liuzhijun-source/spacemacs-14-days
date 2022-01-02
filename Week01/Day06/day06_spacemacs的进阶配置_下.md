@@ -30,19 +30,19 @@ custom 是用来自定义的主题，vanilla 是原生 Emacs 默认的主题，�
 > 显示效果会受主题和字体的影响
 
 spacemacs:
-![spacemacs的演示图片](./spacemacs.png)
+![spacemacs的演示图片](spacemacs.png)
 
 all-the-icons:
-![all-the-icons的演示图片](./all-the-icons.png)
+![all-the-icons的演示图片](all-the-icons.png)
 
 doom:
-![doom的演示图片](./doom.png)
+![doom的演示图片](doom.png)
 
 vim:
-![vim的演示图片](./vim.png)
+![vim的演示图片](vim.png)
 
 vanilla:
-![vanilla的演示图片](./vanilla.png)
+![vanilla的演示图片](vanilla.png)
 
 关于 custom 主题的自定义和 mode-line 的一些值的配置，这里就不过多赘述了，想要了解的话,可以参见[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#mode-line)
 

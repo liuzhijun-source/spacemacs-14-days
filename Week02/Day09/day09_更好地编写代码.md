@@ -6,9 +6,9 @@
 
 Spacemacs 使用 Projectile 管理项目
 
-在你打开一个文件的时候，Spacemacs 应该会自动这个文件所在的目录添加为你的项目，你可以在开始界面的 Project 一栏找到你的项目，也可以使用 <kbd>SPC p p</kbd> 来切换项目，使用 <kbd>SPC p f </kbd> 可以在项目里查找文件，你也可以使用 <kbd>M-x projectile-add-known-project</kbd> 来手动添加项目。Spacemacs 中所有的 Projectile 操作基本都在 <kbd>SPC p</kbd> 中，读者可以自行查看
+在你打开一个文件的时候，Spacemacs 应该会自动这个文件所在的目录添加为你的项目，你可以在开始界面的 Project 一栏找到你的项目，也可以使用 <kbd>SPC p p</kbd> 来切换项目，使用 <kbd>SPC p f</kbd> 可以在项目里查找文件，你也可以使用 <kbd>M-x projectile-add-known-project</kbd> 来手动添加项目。Spacemacs 中所有的 Projectile 操作基本都在 <kbd>SPC p</kbd> 中，读者可以自行查看
 
-Treeemacs 同样可以进行项目管理，但是它并不会自动把当前项目添加到侧边栏中，你需要手动添加： <kbd>M-x `treemacs-add-project-to-workspacemacs`</kbd>
+Treeemacs 同样可以进行项目管理，但是它并不会自动把当前项目添加到侧边栏中，你需要手动添加： <kbd>M-x treemacs-add-project-to-workspacemacs</kbd>
 
 ## Company-mode 的操作优化
 
@@ -21,7 +21,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
     '((auto-completion :variables auto-completion-tab-key-behavior 'complete)))
 ```
 
-你还可以让完成列表根据用户的使用习惯来进行排序，不过可能降低其速度
+你还可以让完成列表根据用户的使用习惯来进行排序，不过可能会对其性能造成影响
 
 ```lisp
 (setq-default dotspacemacs-configuration-layers
@@ -33,7 +33,7 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 ```lisp
 (setq-default dotspacemacs-configuration-layers
     '((auto-completion :variables auto-completion-enable-help-tooltip t)))
-    ;; 设置为 t 可以在选中一个完成项自动显示其文档，将其改为 `manual` 后
+    ;; 设置为 t 可以在选中一个完成项时自动显示其文档，将其改为 `manual` 后
     ;; 按 M-h 或 C-h 才会在旁边显示帮助文档
 ```
 
@@ -48,9 +48,30 @@ Spacemacs 中出现自动补全建议栏时，默认使用 Tab 补全代码中�
 
 关于 Company-box 又有一大堆的说明，这里就不过多赘述了。另外，可以使用 <kbd>SPC m l</kbd> 来查看一个 layer 的帮助文档，关于 auto-completion 的其他技巧，大家可以自行探究
 
+## 括号着色
+
+Spacemacs 默认启动了括号着色的插件，如果你使用的是 spacemacs-dark、spacemacs-light 等主题，那么不同代码块对应的括号可能比较好区分，但对于一些主题来说，括号的颜色几乎相同，这样一来括号着色插件就成了累赘。如果你不喜欢括号着色的话，可以在 dotspacemacs-excluded-packages 中添加这两个包 `rainbow-delimiters` `highlight-parentheses` 来删除它们
+
+Emacs 有一个自带的包来高亮括号，那就是 `show-paren-mode`，但它只会在编辑器的光标处在括号上时才会生效，我们可以使用子龙山人的代码来使光标在括号内时高亮括号。将下面的代码添加到 user-config 中。
+
+```lisp
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+    "Highlight enclosing parens."
+    (cond ((looking-at-p "\\s(") (funcall fn))
+	        (t (save-excursion
+	             (ignore-errors (backward-up-list))
+	             (funcall fn))))))
+```
+
+然后开启 `show-paren-mode` 即可
+
+```lisp
+(show-paren-mode t)
+```
+
 ## 打开代码长度基准线
 
-一般情况下，一行代码的长度不宜超过 80 个字符，如果你希望在第 80 列显示一条竖线来提醒你，可以使用 <kbd>M-x spacemacs/toggle-fill-column-indicator</kbd><kbd>SPC t f</kbd>，如果需要全局启用，在 user-config 中下面的代码，需要注意的是，加入这行代码后，Spacemacs的开始界面也会显示这条竖线
+一般情况下，一行代码的长度不宜超过 80 个字符，如果你希望在第 80 列显示一条竖线来提醒你，可以使用 `spacemacs/toggle-fill-column-indicator`<kbd>SPC t f</kbd>，如果需要全局启用，在 user-config 中添加下面的代码，需要注意的是，加入这行代码后，Spacemacs的开始界面也会显示这条竖线，可能看起来不是很美观
 
 ```lisp
 (display-global-fill-column-indicator-mode 1)
@@ -62,11 +83,11 @@ Emacs 的 buffer 切换不够直观、方便，可以使用 `tab-bar-mode`，它
 
 可以采取命令或者使用鼠标的方式来完成标签栏的切换，Spacemacs 默认并没有绑定相关的快捷键，大家可以自行绑定
 
-- tab-bar-switch-to-tab 根据名字来切换标签
-- tab-bar-switch-to-recent-tab 切换到最近的标签
-- tab-bar-switch-to-next-tab 切换到下一个标签
-- tab-bar-close-tab 关闭标签
-- tab-bar-new-tab 新建标签
+- `tab-bar-switch-to-tab` 根据名字来切换标签
+- `tab-bar-switch-to-recent-tab` 切换到最近的标签
+- `tab-bar-switch-to-next-tab` 切换到下一个标签
+- `tab-bar-close-tab` 关闭标签
+- `tab-bar-new-tab` 新建标签
 
 ## 错误跳转
 
@@ -88,6 +109,14 @@ Spacemacs 默认使用 flycheck 进行语法检查，以下为 flycheck 的跳�
 ```
 
 如果想要显示错误列表，可以使用 <kbd>M-x flycheck-error-list-mode</kbd>
+
+如果你想使用 flymake 代替 flycheck 的话，可以在 `dotspacemacs-excluded-packages`里面加上 flycheck 的包 `flycheck` `flycheck-package` `flycheck-pos-tip` `flycheck-elsa`，下次启动时便会删除这些包。然后在 user-config 中开启 flymake
+
+```lisp
+(flymake-mode t)
+```
+
+
 
 ## 快速运行代码
 

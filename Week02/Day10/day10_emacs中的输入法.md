@@ -19,25 +19,6 @@
 
 以上两个输入法都支持自动切换中英文，安装方法和配置方法可以参见这两个输入法的文档
 
-我现在使用的是 emacs-rime
-
-```lisp
-(setq rime-disable-predicates
-'(rime-predicate-prog-in-code-p
-    rime-predicate-punctuation-line-begin-p
-    rime-predicate-space-after-cc-p
-    rime-predicate-current-uppercase-letter-p
-    rime-predicate-after-alphabet-char-p))
-```
-
-这个配置会使 emacs-rime 在以下情况切换成英文模式：
-
-1. 在代码中时
-2. 在一行的开头时（写 markdown 输入标记符号时会用到）
-3. 在空格的后面输入时（书写时英文单词和中文一般要用空格隔开来）
-4. 在代码的注释和字符串中时
-5. 在以英文开头的字符串后面时
-
 emacs-rime 默认会在 minibuffer 显示候选框，这也是推荐的方式，如果你希望候选框跟随显示，可以配置 `rime-show-candidate`
 
 ```lisp
