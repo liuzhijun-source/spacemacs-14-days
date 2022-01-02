@@ -7,21 +7,22 @@
 ## 快速分屏
 
 如果你使用的是 Emacs 的编辑风格，你应该对 <kbd>C-x 2</kbd> （上下分屏）和 <kbd>C-x 3</kbd> 左右分屏再熟悉不过。你还可以通过 Leader 键来完成分屏操作，它们可能更好按一点
+
 | 命令                 | 快捷键             | 描述     |
 |:--------------------:|:------------------:|:--------:|
-| `split-window-below` | <kbd>SPC w -</kbd> | 上下分屏 |
-| `split-window-right` | <kbd>SPC w /</kbd> | 左右分屏         |
+| split-window-below | <kbd>SPC w -</kbd> | 上下分屏 |
+| split-window-right | <kbd>SPC w /</kbd> | 左右分屏 |
 
 而且，- 和 / 作为快捷键的一部分非常的直观
 
 <kbd>SPC w</kbd> 后面跟上数字可以快速调整窗口的布局以实现快速分屏
 
-|             命令              |       快捷键       |           描述           |
-| :---------------------------: | :----------------: | :----------------------: |
-| `window-split-single-column`  | <kbd>SPC w 1</kbd> |      调整为一个窗口      |
-| `window-split-double-columns` | <kbd>SPC w 2</kbd> |    调整为左右两个窗口    |
-| `window-split-triple-columns` | <kbd>SPC w 3</kbd> | 调整为横向排列的三个窗口 |
-|      `window-split-grid`      | <kbd>SPC w 4</kbd> |  调整为 4x4 的窗口布局   |
+| 命令                        | 快捷键             | 描述                     |
+|:---------------------------:|:------------------:|:------------------------:|
+| window-split-single-column  | <kbd>SPC w 1</kbd> | 调整为一个窗口           |
+| window-split-double-columns | <kbd>SPC w 2</kbd> | 调整为左右两个窗口       |
+| window-split-triple-columns | <kbd>SPC w 3</kbd> | 调整为横向排列的三个窗口 |
+| window-split-grid           | <kbd>SPC w 4</kbd> | 调整为 4x4 的窗口布局    |
 
 ## 快速切换到相应的窗口
 
@@ -29,12 +30,12 @@
 
 如果你是用的是 Vim 风格的快捷键，还可以通过 h j k l 来快速切换窗口
 
-|        命令         |       快捷键       |       描述       |
-| :-----------------: | :----------------: | :--------------: |
-| `evil-window-left`  | <kbd>SPC w h</kbd> | 切换到左边的窗口 |
-| `evil-window-down`  | <kbd>SPC w j</kbd> | 切换到下面的窗口 |
-|  `evil-window-up`   | <kbd>SPC w k</kbd> | 切换到上面的窗口 |
-| `evil-window-right` | <kbd>SPC w l</kbd> | 切换到右边的窗口 |
+| 命令               | 快捷键             | 描述             |
+|:------------------:|:------------------:|:----------------:|
+| evil-window-left   | <kbd>SPC w h</kbd> | 切换到左边的窗口 |
+| evil-window-down   | <kbd>SPC w j</kbd> | 切换到下面的窗口 |
+| evil-window-up     | <kbd>SPC w k</kbd> | 切换到上面的窗口 |
+| evil-window-right | <kbd>SPC w l</kbd> | 切换到右边的窗口 |
 
 如果只存在两个窗口，也可以使用 <kbd>SPC w w</kbd> 来切换到另一个窗口，效果和 <kbd>C-x o</kbd> 相同
 
