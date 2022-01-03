@@ -14,3 +14,5 @@ Windows 系统的主目录默认并不在用户文件夹`C:\Users\username`，�
 
 1. <kbd>M-x customize-variable</kbd> ，然后输入 `ivy-initial-inputs-alist`
 2. 找到 `counsel-M-x` 这一项，然后按左边的 `DEL` 删除即可
+
+## KDE Plasma 桌面环境下 Emacs 无法最大化

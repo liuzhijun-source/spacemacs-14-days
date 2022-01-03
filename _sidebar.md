@@ -14,7 +14,7 @@
   - [Day08 - Emacs Server](Week02/Day08/day08_emacs_server.md)
   - [Day09 - 更好地编写代码](Week02/Day09/day09_更好地编写代码.md)
   - [Day10 - Emacs 中的输入法](Week02/Day10/day10_emacs中的输入法.md)
-  - [Day11 - 窗口操作](Week02/Day11/day11_窗口操作.md)
+  - [Day11 - 窗口操作和文件操作](Week02/Day11/day11_窗口操作_和文件操作.md)
 
 - [Emacs 疑难杂症](emacs_wrong.md)
 
