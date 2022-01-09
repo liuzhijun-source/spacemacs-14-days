@@ -83,8 +83,8 @@ Emacs 快捷键的用户一般可以通过 <kbd>C-x C-f</kbd> 来查找文件
 
 这里的复制不是指文件的内容，而是与文件名、路径相关的，这些操作可以通过 <kbd>SPC f y</kbd> 找到
 
-| 命令             | 快捷键               | 描述               |
-|:----------------:|:--------------------:|:------------------:|
+|       命令       |        快捷键        |        描述        |
+| :--------------: | :------------------: | :----------------: |
 | copy-buffer-name | <kbd>SPC f y b</kbd> | 复制当前 buffer 名 |
-| copy-file-name   | <kbd>SPC f y n</kbd> | 复制当前文件名     |
-| copy-file-path   | <kbd>SPC f y y</kbd> | 复制当前文件的路径 |
+|  copy-file-name  | <kbd>SPC f y n</kbd> |   复制当前文件名   |
+|  copy-file-path  | <kbd>SPC f y y</kbd> | 复制当前文件的路径 |

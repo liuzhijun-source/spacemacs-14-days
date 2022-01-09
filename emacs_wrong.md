@@ -16,3 +16,5 @@ Windows 系统的主目录默认并不在用户文件夹`C:\Users\username`，�
 2. 找到 `counsel-M-x` 这一项，然后按左边的 `DEL` 删除即可
 
 ## KDE Plasma 桌面环境下 Emacs 无法最大化
+
+如果你使用 Linux 系统和 KDE Plasma 桌面环境，点击窗口上的最大化按钮后，Emacs 是无法最大化的，解决办法可以参见英文的 [ArchWiki](https://wiki.archlinux.org/title/Emacs#Improper_window_resizing_in_KDE)
