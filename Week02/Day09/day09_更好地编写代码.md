@@ -66,7 +66,7 @@ Emacs 有一个自带的包来高亮括号，那就是 `show-paren-mode`，但�
 然后开启 `show-paren-mode` 即可
 
 ```lisp
-(show-paren-mode t)
+(show-paren-mode 1)
 ```
 
 ## 打开代码长度基准线
@@ -113,17 +113,15 @@ Spacemacs 默认使用 flycheck 进行语法检查，以下为 flycheck 的跳�
 如果你想使用 flymake 代替 flycheck 的话，可以在 `dotspacemacs-excluded-packages`里面加上 flycheck 的包 `flycheck` `flycheck-package` `flycheck-pos-tip` `flycheck-elsa`，下次启动时便会删除这些包。然后在 user-config 中开启 flymake
 
 ```lisp
-(flymake-mode t)
+(flymake-mode 1)
 ```
-
-
 
 ## 快速运行代码
 
 spacemacs 附带了 quickrun，可以直接编译运行代码，支持大部分的语言。直接使用 <kbd>M-x quickrun</kbd> 即可，或者 <kbd>SPC x x</kbd> 。使用 quickrun 运行的程序，会在10秒后自动关闭，可以通过设置`quickrun-timeout-seconds`来防止它关闭：
 
 ```lisp
-(setq quickrun-timeout-seconds nil) ;; 将该变量设置为 nil
+(setq quickrun-timeout-seconds nil) ;; 注意，它可以设置为 nil，但不能设置为 0！
 ```
 
 程序运行完之后，还会留下一个 buffer 不会自动关闭，可以按 <kbd>C-g</kbd> 将其关闭。

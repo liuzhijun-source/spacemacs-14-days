@@ -15,7 +15,7 @@
 | split-window-below | <kbd>SPC w -</kbd> | 上下分屏 |
 | split-window-right | <kbd>SPC w /</kbd> | 左右分屏 |
 
-而且，- 和 / 作为快捷键的一部分非常的直观你好
+而且，- 和 / 作为快捷键的一部分非常的直观
 
 <kbd>SPC w</kbd> 后面跟上数字可以快速调整窗口的布局以实现快速分屏
 
