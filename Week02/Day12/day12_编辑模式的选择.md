@@ -54,3 +54,8 @@
 (setq evil-escape-key-sequence "jk") ;; 默认值为 fd
 ```
 
+你还可以设置按下这个键后停留的时间，以用来给你足够的时间来按下第二个键
+
+```lisp
+(setq evil-escape-delay 0.5) ;; 默认为 0.1，单位为秒
+```
