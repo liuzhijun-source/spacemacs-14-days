@@ -14,7 +14,7 @@ emacs --daemon
 
 接着便会开始加载配置，加载完成后，使用`emacsclient`命令可以直接连接到刚才加载的配置，但后面通常用带上文件名，如: `emacsclient test.sh`。使用`emacsclient -c`可以直接以图形化界面运行 Spacemacs。演示如下:
 
-![emacscient 演示](./demo.gif)
+![emacscient 演示](demo.gif)
 
 下面这条命令可以让系统在开机时自动建立起一个 Emacs Server，这样的话就不必每次都执行`emacs --daemon`这条命令，可以直接使用`emacsclient`
 

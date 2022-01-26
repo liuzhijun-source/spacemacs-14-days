@@ -10,7 +10,7 @@ Windows 系统的主目录默认并不在用户文件夹`C:\Users\username`，�
 
 ## 解决 ivy 按下 M-x 显示 ^
 
-如果你的 ivy 没有添加任何配置，按下 <kbd>M-x</kbd>  后输入框内应该会出现这个符号“^”，它是为了让你通过书写正则表达式来查找命令，如果你不需要的话，可以用下面的方法关掉
+如果你的 ivy 没有添加任何配置，按下 <kbd>M-x</kbd>  后输入框内应该会出现这个符号“^”，它是为了让你通过书写正则表达式来查找命令，如果你不需要的话，可以用下面的方法关掉[^1]
 
 1. <kbd>M-x customize-variable</kbd> ，然后输入 `ivy-initial-inputs-alist`
 2. 找到 `counsel-M-x` 这一项，然后按左边的 `DEL` 删除即可
@@ -18,3 +18,5 @@ Windows 系统的主目录默认并不在用户文件夹`C:\Users\username`，�
 ## KDE Plasma 桌面环境下 Emacs 无法最大化
 
 如果你使用 Linux 系统和 KDE Plasma 桌面环境，点击窗口上的最大化按钮后，Emacs 是无法最大化的，解决办法可以参见英文的 [ArchWiki](https://wiki.archlinux.org/title/Emacs#Improper_window_resizing_in_KDE)
+
+[^1]: [Stack Overflow 的相关提问](https://stackoverflow.com/questions/69326308/how-can-i-prevent-swiper-from-showing-in-spacemacs)

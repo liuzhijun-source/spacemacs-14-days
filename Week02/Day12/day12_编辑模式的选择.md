@@ -8,11 +8,7 @@
 
 注：默认的 Leader 键是 SPC 空格键
 
-如果你使用 Vim 编辑模式的话，你可以通过输入冒号来在 Spacemacs 中使用类似于 Vim
-中的各种命令，但 Spacemacs 的开发者**可能**更喜欢你使用 leader 键来完成 Vim
-编辑模式下的大多数特殊操作，因为大部分 Emacs 中的命令都已经与 leader 键相关的键绑定
-了。笔者也是最近才切换到 Vim 的编辑模式，然后才明白了 Spacemacs 的**精髓**，冒号
-或者 leader 键，到底主要使用哪个，根据你的使用习惯来决定即可。
+如果你使用 Vim 编辑模式的话，你可以通过输入冒号来在 Spacemacs 中使用类似于 Vim 中的各种命令，但 Spacemacs 的开发者**可能**更喜欢你使用 leader 键来完成 Vim 编辑模式下的大多数特殊操作，因为大部分 Emacs 中的命令都已经与 leader 键相关的键绑定了。笔者也是最近才切换到 Vim 的编辑模式，然后才明白了 Spacemacs 的**精髓**，冒号或者 leader 键，到底主要使用哪个，根据你的使用习惯来决定即可。
 
 以下列出了大部分 leader 键后面跟一个键的快捷键，这些一般是比较常用的
 
@@ -47,8 +43,7 @@
 
 ### 返回到正常模式
 
-你可以通过按 <kbd>ESC</kbd> 来返回到正常模式中， <kbd>C-[</kbd> 也有同样的效果，
-但更为常见的做法时把 jj 或 jk 映射到 ESC 键，在 Spacemacs 中，你可以这样配置
+你可以通过按 <kbd>ESC</kbd> 来返回到正常模式中， <kbd>C-[</kbd> 也有同样的效果，但更为常见的做法时把 jj 或 jk 映射到 ESC 键，在 Spacemacs 中，你可以这样配置
 
 ```lisp
 (setq evil-escape-key-sequence "jk") ;; 默认值为 fd
