@@ -13,3 +13,22 @@ Markdown 中可以使用 \` 来添加代码片段，通过这种方式添加的�
 ## Org-mode
 
 Spacemacs 本身对 Org-mode 的支持已经很完善了，如果你想得到更好的体验，可以添加 `org` layer。因为我并不熟练 org-mode，这些内容就留给读者自己探索吧……
+
+## 中英文和表格对齐
+
+**注：此处的中英文对齐是指中英文 2:1 对齐，也就是两个西文字符的宽度正好对于一个中文符号的宽度。**
+
+大多数 Emacs 用户在 markdown 或 org-mode 中编辑表格时会发现同时包含英文和中文的表格并不能很好地对齐，会显得很凌乱，这是因为大多数 Emacs 用户使用的英文字体和中文字体并不是按照中英文对齐来设置的。如果你不使用表格，但也希望中英文能对齐的话，也可以看看这里的办法。
+
+解决中英文对齐最简单的办法就是换一个支持中英文对齐的字体，例如很多人在使用的[更纱黑体](https://github.com/be5invis/Sarasa-Gothic)，或者 [unifont](https://www.unifoundry.com/unifont/index.html)。如果你希望全局使用这个字体的话，直接在 Spacemacs 的配置文件中把字体修改一下就可以了。也可以选择只把字体用来显示中文或者只用作显示表格中的字体。
+
+unifont 本身包含中文的字符，并且中英文都是 2:1 等宽的，而且，**这个字体和大多数流行的等宽字体，例如：DejaVu Sans Mono、Source Code Pro、Fira Mono 也是能够做到中英文对齐的**，所以，你可以使用这个字体来单独显示中文。如果你默认的字体大小是 14 像素的话，把这个字体的大小设置为 16 像素后观感会好一些。
+
+```lisp
+(dolist (charset '(kana han cjk-misc bopomofo))
+  (set-fontset-font (frame-parameter nil 'font) charset
+                    (font-spec :family "unifont"
+                               :size 16)))
+```
+
+单独用作表格字体的话，可以参考懒猫的办法：<https://manateelazycat.github.io/emacs/2020/04/02/org-font.html>
