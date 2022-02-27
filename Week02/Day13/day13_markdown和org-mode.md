@@ -1,4 +1,4 @@
-# Markdown 和 Org-mode
+# Day13 - Markdown 和 Org-mode
 
 本文介绍 Spacemacs 中 Markdown 和 Org-mode 的相关操作，由于我并不经常使用 org-mode，所以只会点到为止，如果你是一名 org-mode 资深用户，有自己的使用经验的话，可以克隆这个仓库并创建拉取请求。
 

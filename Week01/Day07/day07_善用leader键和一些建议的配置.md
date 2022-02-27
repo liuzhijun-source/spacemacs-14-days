@@ -1,4 +1,4 @@
-# Day07 - 善用 leader 键和一些建议的配置
+# Day07 - 善用 leader 键
 
 ## 用 leader 键定义自己的快捷键
 

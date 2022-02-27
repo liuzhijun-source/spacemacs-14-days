@@ -1,8 +1,8 @@
 # Day04 - Spacemacs 中的 layer（下）
 
-本节将介绍一些使用频率较高的 layer 的配置
+本文将介绍一些使用频率较高的 layer 的配置
 
-> 本版块将会长期更新
+> 本文将会长期更新
 
 ## Treemacs
 

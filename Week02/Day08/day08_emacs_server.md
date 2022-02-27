@@ -1,5 +1,7 @@
 # Day08 - Emacs Server
 
+本文介绍了 Emacs Server 和通过 Emacs Server 快速启动 Emacs 的方法
+
 ## Emacs Server 是什么？
 
 Emacs Server 可以在你的内存中建立一个类似于服务器的东西（把你的配置加载到内存中），这样的你要是想使用 Emacs 就可以直接开启一个 Emacs 客户端来连接到这个服务器，而不需要打开 Emacs 后再加载一边配置，可以极大的提高 Emacs 的启动速度，通常情况下**一秒不到**便可启动！

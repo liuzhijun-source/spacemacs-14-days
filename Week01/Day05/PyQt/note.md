@@ -3,20 +3,20 @@
 
 PyQt5类分为很多模块，主要模块有：
 
-    - QtCore 包含了核心的非GUI的功能。主要和时间、文件与文件夹、各种数据、流、URLs、mime类文件、进程与线程一起使用。
-    - QtGui 包含了窗口系统、事件处理、2D图像、基本绘画、字体和文字类。
-    - QtMultimedia
-    - QtBluetooth
-    - QtNetwork
-    - QtPositioning
-    - Enginio
-    - QtWebSockets
-    - QtWebKit
-    - QtWebKitWidgets
-    - QtXml
-    - QtSvg
-    - QtSql
-    - QtTest
+- QtCore 包含了核心的非GUI的功能。主要和时间、文件与文件夹、各种数据、流、URLs、mime类文件、进程与线程一起使用。
+- QtGui 包含了窗口系统、事件处理、2D图像、基本绘画、字体和文字类。
+- QtMultimedia
+- QtBluetooth
+- QtNetwork
+- QtPositioning
+- Enginio
+- QtWebSockets
+- QtWebKit
+- QtWebKitWidgets
+- QtXml
+- QtSvg
+- QtSql
+- QtTest
 
 ## HelloWorld
 ### 一个简单的窗口
@@ -34,7 +34,7 @@ PyQt5类分为很多模块，主要模块有：
       w.show()
 
       sys.exit(app.exec_())
-      ```
+```
 
 上面的代码，能展示出一个小窗口
 

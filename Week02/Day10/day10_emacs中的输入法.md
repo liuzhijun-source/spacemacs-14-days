@@ -1,5 +1,7 @@
 # Day10 - Emacs 中的输入法
 
+本文介绍了 Emacs 中的中文输入法
+
 ## 为什么要使用 Emacs 中的输入法？
 
 1. 有一些 Linux 发行版（如 Arch Linux）下的 Emacs 一开始可能并不能使用系统的 [Fcitx 输入法](https://fcitx-im.org/wiki/Fcitx/zh-hans0)和 iBus 输入法

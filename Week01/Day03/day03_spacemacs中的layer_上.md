@@ -1,5 +1,7 @@
 # Day03 - Spacemacs 中的 layer（上）
 
+本文介绍了 layer 这一概念，并引导读者添加一些常用的 layer 。
+
 ## layer 是什么？
 
 layer 的中文意思是“层”，Spacemacs 中的一个 layer，即一个配置层。配置层的大体含义是将多个你需要的包以及包的配置等集中到一个地方，就是层。如果需要使用 Spacemacs 中对应的功能，就只需要添加对应的配置层就可以了。
@@ -8,12 +10,11 @@ layer 极大的简化了 Emacs 用户安装和使用配置包的过程。如果�
 
 同时，得益于高度整合的功能，layer 也更便于管理，无论是安装还是卸载，都只需要在对应的地方添加或删除某些文本。
 
-有关于 layer 的更多信息，可以查看[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#configuration-layers)
+有关于 layer 的更多信息，可以查看[官方文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html#configuration-layers)。
 
 ## 添加一些常用的 layer
 
-在 .spacemacs 文件中找到`dotspacemacs-configuration-layers`，将自己需要的 layer 填写在里面，下次启动 Spacemacs 时就会开始安装了，
-以下是对一些常用的 layer 的介绍
+在 .spacemacs 文件中找到`dotspacemacs-configuration-layers`，将自己需要的 layer 填写在里面，下次启动 Spacemacs 时就会开始安装了。以下是对一些常用的 layer 的介绍
 
 - [auto-completion](https://develop.spacemacs.org/layers/LAYERS.html#auto-completion)
 

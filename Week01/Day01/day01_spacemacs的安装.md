@@ -1,7 +1,11 @@
 # Day01 - Spacemacs 的安装
 
-> 在开始之前，确保你的电脑上已经安装了 Emacs，如果是 Windows 系统的话，确保你已经添加了 HOME 环境变量
-> 如果不知道 Windows 系统怎么添加 HOME 环境变量，可以[查看](emacs_wrong.md) Emacs 疑难杂症板块
+在开始之前，确保你的电脑上已经安装了 Emacs，如果是 Windows 系统的话，确保你已经添加了 HOME 环境变量
+如果不知道 Windows 系统怎么添加 HOME 环境变量，可以[查看](emacs_wrong.md) Emacs 疑难杂症板块
+
+本文介绍如何安装 Spacemacs
+
+> Spacemacs 是一套 Emacs 配置文件，准确来说，应该是安装 Spacemacs 这套配置
 
 ## Windows 安装 Spacemacs
 

@@ -12,11 +12,12 @@
 - 第二周 - Spacemacs 的使用
 
   - [Day08 - Emacs Server](Week02/Day08/day08_emacs_server.md)
-  - [Day09 - 编写代码](Week02/Day09/day09_更好地编写代码.md)
+  - [Day09 - 编写代码](Week02/Day09/day09_编写代码.md)
   - [Day10 - Emacs 中的输入法](Week02/Day10/day10_emacs中的输入法.md)
   - [Day11 - 窗口操作和文件操作](Week02/Day11/day11_窗口操作和文件操作.md)
   - [Day12 - 编辑模式的选择](Week02/Day12/day12_编辑模式的选择.md)
   - [Day13 - Markdown 和 Org-mode](Week02/Day13/day13_markdown和org-mode.md)
+  - [Day14 - 学习还将继续](/home/lzj/GitHub/Week02/Day14/day14_学习还将继续.md)
 
 - [Emacs 疑难杂症](emacs_wrong.md)
 
