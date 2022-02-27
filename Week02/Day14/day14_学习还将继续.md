@@ -2,7 +2,7 @@
 
 Spacemacs 14 Days 的教程已经接近了尾声，在我能力范围内能讲的内容也基本讲完了。但是，Emacs 和 Spacemacs 背后仍然有大量的内容等待大家去探索。到目前为止，你现在应该也具备了一定的自我学习能力，闲暇之余，你可以看看 Spacemacs 的[文档](https://develop.spacemacs.org/doc/DOCUMENTATION.html)。
 
-> 需要注意的是，我给出的是 Spacemacs 开发版本的文档，你应该可以看到这个链接的域名是 <develop.spacemacs.org>，如果在搜索引擎中搜索的话，最靠前的结果大概是 <www.spacemacs.org>，后者是 Spacemacs 稳定版本的文档，但是已经年久失修了，所以我更建议你看开发版本的文档。
+> 需要注意的是，我给出的是 Spacemacs 开发版本的文档，你应该可以看到这个链接的域名是 <https://develop.spacemacs.org>，如果在搜索引擎中搜索的话，最靠前的结果大概是 <https://www.spacemacs.org>，后者是 Spacemacs 稳定版本的文档，但是已经年久失修了，所以我更建议你看开发版本的文档。
 
 如果你在 Spacemacs 中遇到了一些使用上的问题，可以在论坛上发一个帖子来寻求帮助，例如：[Emacs China](https://emacs-china.org/)，在编写帖子的时候，你需要准确的描述你所遇到的问题，这样别人才可以更好地帮助到你，另外，语气要相对友好一些。
 
@@ -18,4 +18,4 @@ Spacemacs 是一个开源的软件，它的持续发展离不开广大开源贡�
 
 贡献的方式主要有两种：编写 layer 和参与贡献 Spacemacs 的源代码。你可以参与改进已存在 layer 的代码，也可以自己创建一个全新的 layer。对于 layer 的编写，这里有一份详尽的文档：<https://develop.spacemacs.org/doc/LAYERS.html>。总之，不要认为自己技不如人便退缩，不管是谁，都是从菜鸟过来的，在不断的学习中你最终也一定可以写出令人刮目相看的代码。参与 Spacemacs 的开发并不是什么可怕的事情，你可以从[提交最简单的一行代码](https://github.com/syl20bnr/spacemacs/pull/15237)开始。
 
-愿你在学习的路上终将有所成就！
+愿你在学习的路上终有所成！
