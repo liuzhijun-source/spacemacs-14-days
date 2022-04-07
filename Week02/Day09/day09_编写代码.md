@@ -93,8 +93,8 @@ Emacs 的 buffer 切换不够直观、方便，可以使用 `tab-bar-mode`，它
 
 Emacs 有自己的错误跳转函数，兼容 flycheck、flymake
 
-- next-error <kbd>SPC c n</kbd> 跳转到下一个错误
-- previous-error <kbd>SPC c N</kbd> 跳转到上一个错误
+- next-error <kbd>SPC c n</kbd> 或 <kbd>] q</kbd> 跳转到下一个错误
+- previous-error <kbd>SPC c N</kbd> 或 <kbd>[ q</kbd> 跳转到上一个错误
 
 Spacemacs 默认使用 flycheck 进行语法检查，以下为 flycheck 的跳转函数
 

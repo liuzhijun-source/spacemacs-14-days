@@ -20,7 +20,7 @@
 
 如果你使用 Windows 系统的话，Consolas 应该是你最熟悉的等宽字体了，如果你是用 macOS 系统的话，可以试试 Menlo
 
-**Windows 系统默认并没有安装 Source Code Pro 字体，可以搜索进行安装，或者更改为已经安装的字体。**
+**Windows 系统默认并没有安装 Source Code Pro 字体，可以搜索进行安装，或者更改为已经安装的字体**
 
 `:size`选项可以更改字体的大小，不同的字体大小不一樣，所以个值并不是固定的，得根据自身需要选择，`:weight`可以修改字体的字重，`:width`可以修改字体的宽度。
 
@@ -49,7 +49,7 @@ Emacs 默认无法显示 Emoji 颜文字，你可以单独设置 Emoji 字体，
 
 在 .spacemacs 搜索`theme`可以找到一个叫做`dotsapcemacs-themes`的选项，在里面可以选择自己想要的主题，最靠前的是默认主题，键入主题包名后，下次启动 Emacs 时会自动下载并安装主题，默认的 spacemacs-dark 和 spacemacs-light 已经很好看了，如果你不喜欢的话，可以去 [Emacs Galley](https://emacsthemes.com/ "一个 Emacs 主题展示板")
 
-按 <kbd>SPC T s</kbd> 可以快速切换主题.
+按 <kbd>SPC T s</kbd> 可以快速切换主题
 
 ## 用户配置
 

@@ -24,7 +24,7 @@ layer 极大的简化了 Emacs 用户安装和使用配置包的过程。如果�
 
 优化 Emacs 的一些常用操作，可以使 Emacs 用起来更顺手。建议添加
 
-- [emacs-lisp](https://develop.spacemacs.org/layers/LAYERS.html#lisp-dialects)
+- [emacs-lisp](https://develop.spacemacs.org/layers/LAYERS.html#lisp-dialects)（默认已安装）
 
 提供对 elisp 语言的支持。建议添加
 
@@ -36,7 +36,7 @@ layer 极大的简化了 Emacs 用户安装和使用配置包的过程。如果�
 
 提供了对 markdown 的支持，包括生成预览和目录，如有相关需要，建议添加
 
-- [multiple-cursors](https://develop.spacemacs.org/layers/LAYERS.html#multiple-cursors)
+- [multiple-cursors](https://develop.spacemacs.org/layers/LAYERS.html#multiple-cursors)（默认已安装）
 
 提供了多光标支持，即在编辑文件时可以使用多个光标，可以根据自己需要添加
 
@@ -52,21 +52,17 @@ layer 极大的简化了 Emacs 用户安装和使用配置包的过程。如果�
 
 提供了拼写检查功能。建议添加
 
-- [treemacs](https://develop.spacemacs.org/layers/LAYERS.html#treemacs)
+- [treemacs](https://develop.spacemacs.org/layers/LAYERS.html#treemacs)（默认已安装）
 
 提供了文件导航功能和文件操作支持，可以在 Spacemacs 左侧显示当前目录下的文件。建议添加
 
-- [neotree](https://develop.spacemacs.org/layers/LAYERS.html#neotree)
-
-提供了和 treemacs 相似的功能，但相比于 treemacs，功能较少，两者之间可以根据自己需要选择
-
-- [helm](https://develop.spacemacs.org/layers/LAYERS.html#helm)
+- [helm](https://develop.spacemacs.org/layers/LAYERS.html#helm)（默认已安装）
 
 一个重量级的补全解决方案，在搜索文件、文本或者管理项目和 layer、输入命令时都提供了强大的补全功能。建议添加
 
 - [ivy](https://develop.spacemacs.org/layers/LAYERS.html#ivy)
 
-和 helm 相似，但更加的轻量。建议添加
+和 helm 相似，但更加的轻量的替代品
 
 > 值得注意的是，如果同时添加 helm 和 ivy，helm 将会被 ivy 替换掉，两者不能共存，因此要根据自己的需要进行取舍，但不论是 helm 还是 ivy，强烈建议在两者之中选择一个，这将会对你使用 Spacemacs 提供极大的便利
 
