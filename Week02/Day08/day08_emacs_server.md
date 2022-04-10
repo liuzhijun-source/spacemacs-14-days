@@ -18,6 +18,12 @@ emacs --daemon
 
 ![emacscient 演示](demo.gif)
 
+除此之外，如果你在远程服务器上启动了 Emacs Server, 同时你的系统支持 SSH X11 转发（比如多数 Linux 发行版），你可以用如下命令在本机启动带图形界面的 Emacs Client 进行远程开发
+
+```shell
+ssh -Y user@server-address -f emacsclient --eval '"(make-frame-on-display \"$DISPLAY\")"'
+```
+
 下面这条命令可以让系统在开机时自动建立起一个 Emacs Server，这样的话就不必每次都执行`emacs --daemon`这条命令，可以直接使用`emacsclient`
 
 ```shell

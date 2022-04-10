@@ -67,7 +67,7 @@ Emacs 快捷键的用户一般可以通过 <kbd>C-x C-f</kbd> 来查找文件
 
 ### 编辑文件
 
-对于 Linux 用户，可能有使用 sudo 编辑文件的需要，如果直接从终端使用 `sudo emacs <filename>` 来编辑文件并不能从主目录下的 `.emacs.d` 目录加载配置，也就是只能使用原生无配置的 Emacs，如果要在 Spacemacs 编辑一些只有 root 用户才能修改的文件，可以使用 `sudo edit` <kbd>SPC f s</kbd> 来在 Spacemacs 中使用 root 权限编辑文件
+对于 Linux 用户，可能有使用 sudo 编辑文件的需要，此时可以使用 `sudo -E emacs <filename>` 来保留用户环境并加载当前用户（而不是 root 用户）的 Emacs 配置
 
 常用的编辑文件的操作如下
 
