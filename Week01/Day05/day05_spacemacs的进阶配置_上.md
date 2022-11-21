@@ -74,10 +74,10 @@ dotspacemacs-configuration-layers
          (treemacs :variables treemacs-use-all-the-icons-theme t)
          (ivy      :variables ivy-enable-icons t)
          (eaf      :variables eaf-browser-dark-mode nil
-                   eaf-browser-default-search-engine "bing"
-                   eaf-browser-enable-adblocker t
-                   eaf-browse-blank-page-url "https://cn.bing.com"
-                   browse-url-browser-function 'eaf-open-browser)
+                              eaf-browser-default-search-engine "bing"
+                              eaf-browser-enable-adblocker t
+                              eaf-browse-blank-page-url "https://cn.bing.com"
+                              browse-url-browser-function 'eaf-open-browser)
          )
 ```
 
